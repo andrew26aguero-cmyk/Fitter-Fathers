@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Fitter Fathers — Habit-based fitness and life coaching for fathers who are ready to show up stronger.">
+  <meta name="description" content="Fitter Fathers — Habit-based fitness and life coaching for dads who are ready to show up stronger.">
   <title>Fitter Fathers | Coaching for Dads Who Are Ready</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,9 @@
   <style>
 
 ```
-/* ─── RESET ─────────────────────────────────────────────── */
+/* ================================================================
+   RESET
+================================================================ */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -29,26 +31,28 @@ ul { list-style: none; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; }
 img { display: block; max-width: 100%; }
 
-/* ─── TOKENS ─────────────────────────────────────────────── */
+/* ================================================================
+   DESIGN TOKENS
+================================================================ */
 :root {
   --black:     #090909;
   --deep:      #0f0f0f;
   --card:      #141414;
-  --border:    #202020;
+  --border:    #1e1e1e;
   --accent:    #4a7a48;
   --accent-lt: #5c8c5a;
   --white:     #F2F0EB;
   --muted:     #888888;
   --gray:      #444444;
   --red:       #E03E2D;
+  --f-display:   'Bebas Neue', 'Arial Black', Impact, sans-serif;
+  --f-condensed: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  --f-body:      'Barlow', 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* Font stacks as regular variables (NOT used in font-family — browsers can't resolve CSS vars there) */
-/* Display  → 'Bebas Neue', 'Arial Black', Impact, sans-serif   */
-/* Condensed→ 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif */
-/* Body     → 'Barlow', 'Helvetica Neue', Arial, sans-serif     */
-
-/* ─── SHARED ─────────────────────────────────────────────── */
+/* ================================================================
+   UTILITIES
+================================================================ */
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -70,24 +74,23 @@ img { display: block; max-width: 100%; }
   flex-shrink: 0;
 }
 
-.display-title {
+.section-title {
   font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
-  font-size: clamp(40px, 5.5vw, 70px);
+  font-size: clamp(42px, 5.5vw, 72px);
   line-height: 0.93;
   letter-spacing: 1px;
   margin-bottom: 22px;
 }
-.display-title .green { color: var(--accent); }
+.section-title .g { color: var(--accent); }
 
-/* Scroll-reveal */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .reveal.in { opacity: 1; transform: none; }
 
-/* Buttons */
+/* ── Buttons ── */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -99,20 +102,23 @@ img { display: block; max-width: 100%; }
   letter-spacing: 2.5px;
   text-transform: uppercase;
   padding: 15px 32px;
-  transition: background 0.2s, transform 0.2s, border-color 0.2s, color 0.2s;
-  cursor: pointer;
   border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, border-color 0.2s, color 0.2s;
+  text-decoration: none;
 }
 .btn-green { background: var(--accent); color: #000; }
 .btn-green:hover { background: var(--accent-lt); transform: translateY(-2px); }
 .btn-ghost {
   background: transparent;
   color: var(--white);
-  border: 1.5px solid rgba(255,255,255,0.22);
+  border: 1.5px solid rgba(255,255,255,0.2);
 }
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
-/* ─── NAV ────────────────────────────────────────────────── */
+/* ================================================================
+   HEADER / NAV
+================================================================ */
 header {
   position: fixed;
   inset: 0 0 auto 0;
@@ -124,13 +130,15 @@ header {
   padding: 0 48px;
   background: rgba(9,9,9,0.97);
   border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(12px);
 }
+
 .logo {
   font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
   font-size: 22px;
   letter-spacing: 5px;
   color: var(--white);
+  flex-shrink: 0;
 }
 .logo span { color: var(--accent); }
 
@@ -152,7 +160,7 @@ header {
 .nav-links .ig { color: var(--accent); }
 .nav-links .ig:hover { color: var(--accent-lt); }
 
-.nav-book {
+.nav-cta {
   font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
   font-size: 12px;
   font-weight: 700;
@@ -161,20 +169,19 @@ header {
   background: var(--accent);
   color: #000;
   padding: 10px 22px;
-  border: none;
-  cursor: pointer;
   transition: background 0.2s;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
 }
-.nav-book:hover { background: var(--accent-lt); }
+.nav-cta:hover { background: var(--accent-lt); }
 
 .hamburger {
   display: none;
   flex-direction: column;
   gap: 5px;
-  background: none;
-  border: none;
   cursor: pointer;
-  padding: 6px 4px;
+  padding: 4px;
 }
 .hamburger span {
   display: block;
@@ -185,14 +192,16 @@ header {
   transition: all 0.3s;
 }
 
-/* ─── HERO ───────────────────────────────────────────────── */
+/* ================================================================
+   HERO
+================================================================ */
 #hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 66px 48px 72px;
+  padding: 66px 48px 80px;
   overflow: hidden;
 }
 
@@ -200,8 +209,8 @@ header {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 72% 50%, rgba(74,122,72,0.08) 0%, transparent 55%),
-    linear-gradient(to bottom, rgba(9,9,9,0.15) 0%, rgba(9,9,9,0.9) 100%);
+    radial-gradient(ellipse at 65% 40%, rgba(74,122,72,0.09) 0%, transparent 60%),
+    linear-gradient(to bottom, rgba(9,9,9,0.1) 0%, rgba(9,9,9,0.92) 100%);
 }
 .hero-grid {
   position: absolute;
@@ -212,42 +221,10 @@ header {
   background-size: 60px 60px;
 }
 
-.hero-photo-panel {
-  position: absolute;
-  top: 0; right: 0;
-  width: 44%;
-  height: 100%;
-  background: linear-gradient(160deg, #181818 0%, #0c0c0c 100%);
-  border-left: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  color: var(--gray);
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-.hero-photo-panel .ph-icon { font-size: 40px; opacity: 0.15; }
-
-.hero-photo-fade {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(9,9,9,1)   0%,
-    rgba(9,9,9,0.93) 30%,
-    rgba(9,9,9,0.4)  62%,
-    transparent      100%
-  );
-}
-
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 700px;
+  max-width: 780px;
 }
 
 .hero-eyebrow {
@@ -273,24 +250,24 @@ header {
 
 .hero-h1 {
   font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
-  font-size: clamp(68px, 10.5vw, 140px);
+  font-size: clamp(72px, 11vw, 148px);
   line-height: 0.88;
   letter-spacing: 2px;
-  margin-bottom: 26px;
+  margin-bottom: 28px;
 }
 .hero-h1 .stroke {
   -webkit-text-stroke: 2px var(--white);
   color: transparent;
 }
-.hero-h1 .green { color: var(--accent); }
+.hero-h1 .g { color: var(--accent); }
 
 .hero-sub {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 300;
   line-height: 1.75;
   color: var(--muted);
-  max-width: 460px;
-  margin-bottom: 38px;
+  max-width: 520px;
+  margin-bottom: 40px;
 }
 
 .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -302,18 +279,18 @@ header {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-top: 1px solid var(--border);
-  margin-top: 64px;
-  padding-top: 34px;
+  margin-top: 72px;
+  padding-top: 36px;
 }
 .stat {
-  padding-right: 28px;
+  padding-right: 24px;
   border-right: 1px solid var(--border);
-  margin-right: 28px;
+  margin-right: 24px;
 }
 .stat:last-child { border-right: none; padding-right: 0; margin-right: 0; }
 .stat-n {
   font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
-  font-size: 48px;
+  font-size: 50px;
   color: var(--accent);
   line-height: 1;
 }
@@ -323,83 +300,40 @@ header {
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--muted);
-  margin-top: 5px;
+  margin-top: 4px;
 }
 
-/* ─── ABOUT ──────────────────────────────────────────────── */
+/* ================================================================
+   ABOUT
+================================================================ */
 #about {
   padding: 100px 48px;
   background: var(--deep);
   border-top: 1px solid var(--border);
 }
-.about-wrap {
-  max-width: 1120px;
+.about-inner {
+  max-width: 760px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
 }
-
-/* Photo stack */
-.img-stack { position: relative; height: 520px; }
-.img-main {
-  position: absolute;
-  inset: 0 52px 52px 0;
-  background: var(--card);
-  border: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  color: var(--gray);
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-.img-main .pi { font-size: 34px; opacity: 0.16; }
-.img-small {
-  position: absolute;
-  bottom: 0; right: 0;
-  width: 180px;
-  height: 180px;
-  background: var(--card);
-  border: 2px solid var(--accent);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  color: var(--gray);
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-.img-small .pi { font-size: 24px; opacity: 0.22; }
-
-/* About text */
-.about-body p {
-  font-size: 16px;
+.about-inner p {
+  font-size: 17px;
   font-weight: 300;
   line-height: 1.85;
   color: var(--muted);
   margin-bottom: 18px;
 }
-.about-body p strong { color: var(--white); font-weight: 500; }
+.about-inner p strong { color: var(--white); font-weight: 500; }
 
 .pull-quote {
   border-left: 3px solid var(--accent);
-  padding: 14px 20px;
-  margin: 26px 0;
+  padding: 14px 22px;
+  margin: 30px 0;
   background: rgba(74,122,72,0.05);
   font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   font-style: italic;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.45;
   color: var(--white);
 }
 
@@ -407,7 +341,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 34px;
+  margin-bottom: 36px;
 }
 .pill {
   font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
@@ -415,34 +349,33 @@ header {
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 7px 15px;
+  padding: 7px 16px;
   border: 1px solid var(--border);
   color: var(--muted);
   background: var(--card);
 }
-.pill.active {
-  border-color: var(--accent);
-  color: var(--accent);
-}
+.pill.active { border-color: var(--accent); color: var(--accent); }
 
-/* ─── COACHING ───────────────────────────────────────────── */
+/* ================================================================
+   COACHING
+================================================================ */
 #coaching {
   padding: 100px 48px;
   border-top: 1px solid var(--border);
 }
-.coaching-wrap { max-width: 1120px; margin: 0 auto; }
+.coaching-inner { max-width: 1100px; margin: 0 auto; }
 
 .coaching-header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: end;
-  margin-bottom: 56px;
+  margin-bottom: 60px;
 }
 .coaching-desc {
   font-size: 16px;
   font-weight: 300;
-  line-height: 1.75;
+  line-height: 1.8;
   color: var(--muted);
 }
 
@@ -457,14 +390,14 @@ header {
 .card {
   background: var(--card);
   border: 1px solid var(--border);
-  padding: 42px 34px;
+  padding: 44px 36px;
   position: relative;
   transition: border-color 0.3s, transform 0.3s;
 }
-.card:hover { border-color: var(--accent); transform: translateY(-5px); }
+.card:hover { border-color: var(--accent); transform: translateY(-4px); }
 .card.featured {
   border-color: var(--accent);
-  background: linear-gradient(160deg, #0b160b 0%, #141414 100%);
+  background: linear-gradient(160deg, #0b170b 0%, #141414 100%);
 }
 
 .card-badge {
@@ -493,25 +426,24 @@ header {
 }
 .card-name {
   font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
-  font-size: 34px;
+  font-size: 36px;
   letter-spacing: 1px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 .card-desc {
   font-size: 14px;
   font-weight: 300;
   line-height: 1.6;
   color: var(--muted);
-  margin-bottom: 26px;
+  margin-bottom: 28px;
 }
-
-.feature-list {
+.features {
   display: flex;
   flex-direction: column;
-  gap: 11px;
-  margin-bottom: 30px;
+  gap: 12px;
+  margin-bottom: 32px;
 }
-.feature-item {
+.feature {
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -519,7 +451,7 @@ header {
   color: var(--muted);
   line-height: 1.45;
 }
-.feature-item strong { color: var(--white); font-weight: 500; }
+.feature strong { color: var(--white); font-weight: 500; }
 .tick {
   flex-shrink: 0;
   width: 17px;
@@ -534,7 +466,6 @@ header {
   color: var(--accent);
   margin-top: 2px;
 }
-
 .card-limit {
   display: flex;
   align-items: center;
@@ -544,15 +475,9 @@ header {
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--red);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
-.red-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--red);
-  flex-shrink: 0;
-}
+.rdot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); flex-shrink: 0; }
 
 .card-btn {
   display: block;
@@ -564,19 +489,18 @@ header {
   letter-spacing: 2px;
   text-transform: uppercase;
   padding: 14px;
+  border: none;
   cursor: pointer;
   transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
-.card-btn.solid { background: var(--accent); color: #000; border: none; }
+.card-btn.solid { background: var(--accent); color: #000; }
 .card-btn.solid:hover { background: var(--accent-lt); }
-.card-btn.outline {
-  background: transparent;
-  color: var(--white);
-  border: 1.5px solid rgba(255,255,255,0.2);
-}
+.card-btn.outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.2); }
 .card-btn.outline:hover { border-color: var(--accent); color: var(--accent); }
 
-/* ─── CTA ────────────────────────────────────────────────── */
+/* ================================================================
+   CTA
+================================================================ */
 #cta {
   padding: 120px 48px;
   text-align: center;
@@ -587,43 +511,43 @@ header {
 }
 .cta-glow {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 50%; top: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
-  height: 380px;
+  width: 600px; height: 400px;
   background: radial-gradient(ellipse, rgba(74,122,72,0.09) 0%, transparent 70%);
   pointer-events: none;
 }
 .cta-inner {
   position: relative;
   z-index: 2;
-  max-width: 640px;
+  max-width: 660px;
   margin: 0 auto;
 }
-.cta-eyebrow {
-  justify-content: center;
-}
+.cta-eyebrow { justify-content: center; }
 .cta-h2 {
   font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
-  font-size: clamp(58px, 9vw, 108px);
+  font-size: clamp(60px, 9vw, 110px);
   line-height: 0.9;
   letter-spacing: 2px;
   margin-bottom: 20px;
 }
-.cta-h2 .green { color: var(--accent); }
+.cta-h2 .g { color: var(--accent); }
 .cta-sub {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 300;
   line-height: 1.7;
   color: var(--muted);
-  margin-bottom: 40px;
+  margin-bottom: 42px;
+}
+.cta-btn {
+  font-size: 15px;
+  padding: 18px 48px;
 }
 .pulse-row {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 20px;
+  margin-top: 22px;
   font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
   font-size: 11px;
   font-weight: 700;
@@ -632,18 +556,19 @@ header {
   color: var(--red);
 }
 .pdot {
-  width: 8px;
-  height: 8px;
+  width: 8px; height: 8px;
   border-radius: 50%;
   background: var(--red);
-  animation: pulse 1.6s ease-in-out infinite;
+  animation: blink 1.6s ease-in-out infinite;
 }
-@keyframes pulse {
+@keyframes blink {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.35; transform: scale(1.45); }
+  50%       { opacity: 0.3; transform: scale(1.5); }
 }
 
-/* ─── FOOTER ─────────────────────────────────────────────── */
+/* ================================================================
+   FOOTER
+================================================================ */
 footer {
   background: #050505;
   border-top: 1px solid var(--border);
@@ -669,12 +594,11 @@ footer {
   line-height: 1.7;
   color: var(--muted);
   max-width: 240px;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 }
 .socials { display: flex; gap: 10px; }
-.social-btn {
-  width: 36px;
-  height: 36px;
+.soc {
+  width: 36px; height: 36px;
   border: 1px solid var(--border);
   display: flex;
   align-items: center;
@@ -683,7 +607,7 @@ footer {
   color: var(--muted);
   transition: border-color 0.2s, color 0.2s;
 }
-.social-btn:hover { border-color: var(--accent); color: var(--accent); }
+.soc:hover { border-color: var(--accent); color: var(--accent); }
 
 .footer-col-title {
   font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
@@ -707,27 +631,25 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 26px;
+  padding-top: 28px;
   flex-wrap: wrap;
   gap: 12px;
 }
 .footer-copy { font-size: 12px; color: var(--gray); }
-.footer-legal { display: flex; gap: 18px; }
-.footer-legal a {
-  font-size: 12px;
-  color: var(--gray);
-  transition: color 0.2s;
-}
+.footer-legal { display: flex; gap: 20px; }
+.footer-legal a { font-size: 12px; color: var(--gray); transition: color 0.2s; }
 .footer-legal a:hover { color: var(--muted); }
 
-/* ─── MODAL ──────────────────────────────────────────────── */
+/* ================================================================
+   MODAL
+================================================================ */
 #modal {
   display: none;
   position: fixed;
   inset: 0;
   z-index: 900;
-  background: rgba(4,4,4,0.95);
-  backdrop-filter: blur(16px);
+  background: rgba(4,4,4,0.96);
+  backdrop-filter: blur(18px);
   overflow-y: auto;
 }
 #modal.open {
@@ -736,12 +658,13 @@ footer {
   justify-content: center;
   padding: 40px 24px;
 }
+
 .modal-box {
   width: 100%;
   max-width: 530px;
   background: var(--card);
   border: 1px solid var(--border);
-  padding: 50px 42px;
+  padding: 52px 44px;
   position: relative;
 }
 .modal-close {
@@ -751,7 +674,7 @@ footer {
   background: none;
   border: 1px solid var(--border);
   color: var(--muted);
-  font-size: 15px;
+  font-size: 14px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -772,35 +695,29 @@ footer {
   color: var(--accent);
   margin-bottom: 12px;
 }
-.modal-tag::before {
-  content: '';
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--accent);
-  flex-shrink: 0;
-}
+.modal-tag::before { content: ''; display: block; width: 22px; height: 2px; background: var(--accent); flex-shrink: 0; }
 
 .modal-h2 {
   font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
-  font-size: 44px;
+  font-size: 46px;
   line-height: 0.93;
   margin-bottom: 10px;
 }
-.modal-h2 .green { color: var(--accent); }
+.modal-h2 .g { color: var(--accent); }
+
 .modal-sub {
   font-size: 14px;
   font-weight: 300;
   line-height: 1.65;
   color: var(--muted);
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 }
 
 .expect-box {
   background: var(--deep);
   border-left: 3px solid var(--accent);
-  padding: 13px 17px;
-  margin-bottom: 24px;
+  padding: 14px 18px;
+  margin-bottom: 26px;
 }
 .expect-label {
   font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
@@ -837,7 +754,7 @@ footer {
   color: var(--white);
   font-family: 'Barlow', 'Helvetica Neue', Arial, sans-serif;
   font-size: 15px;
-  padding: 12px 14px;
+  padding: 13px 15px;
   outline: none;
   transition: border-color 0.2s;
   appearance: none;
@@ -854,7 +771,7 @@ footer {
   font-size: 12px;
   letter-spacing: 1px;
   color: var(--red);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 .form-submit {
   width: 100%;
@@ -882,7 +799,6 @@ footer {
   line-height: 1.6;
 }
 
-/* Success screen */
 .modal-success {
   display: none;
   text-align: center;
@@ -891,11 +807,11 @@ footer {
 .success-icon { font-size: 44px; margin-bottom: 14px; }
 .success-h3 {
   font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
-  font-size: 42px;
+  font-size: 44px;
   line-height: 1;
   margin-bottom: 12px;
 }
-.success-h3 .green { color: var(--accent); }
+.success-h3 .g { color: var(--accent); }
 .success-p {
   font-size: 14px;
   font-weight: 300;
@@ -904,7 +820,9 @@ footer {
   margin-bottom: 26px;
 }
 
-/* ─── RESPONSIVE ─────────────────────────────────────────── */
+/* ================================================================
+   RESPONSIVE
+================================================================ */
 @media (max-width: 900px) {
   header { padding: 0 24px; }
   .nav-links { display: none; }
@@ -916,49 +834,41 @@ footer {
     top: 66px; left: 0; right: 0;
     background: rgba(9,9,9,0.99);
     border-bottom: 1px solid var(--border);
-    padding: 24px;
+    padding: 24px 24px 28px;
     gap: 20px;
     align-items: flex-start;
     z-index: 400;
   }
-  .nav-links.open .nav-book { width: 100%; text-align: center; }
+  .nav-links.open .nav-cta { width: 100%; text-align: center; display: block; }
 
-  #hero { padding: 86px 24px 56px; }
-  .hero-photo-panel { display: none; }
-  .hero-photo-fade { display: none; }
-  .hero-h1 { font-size: 62px; }
-  .hero-sub { max-width: 100%; }
-  .stats {
-    grid-template-columns: 1fr 1fr;
-    margin-top: 44px;
-    padding-top: 30px;
-    gap: 24px 0;
-  }
+  #hero { padding: 88px 24px 60px; }
+  .hero-h1 { font-size: 64px; }
+  .hero-sub { font-size: 16px; max-width: 100%; }
+  .stats { grid-template-columns: 1fr 1fr; margin-top: 48px; padding-top: 30px; gap: 24px 0; }
   .stat { border-right: none; padding-right: 0; margin-right: 0; }
 
   #about { padding: 72px 24px; }
-  .about-wrap { grid-template-columns: 1fr; gap: 36px; }
-  .img-stack { display: none; }
+  .about-inner { max-width: 100%; }
 
   #coaching { padding: 72px 24px; }
   .coaching-header { grid-template-columns: 1fr; gap: 16px; }
   .cards { grid-template-columns: 1fr; max-width: 460px; }
 
   #cta { padding: 80px 24px; }
-  .cta-h2 { font-size: 54px; }
+  .cta-h2 { font-size: 56px; }
 
   footer { padding: 48px 24px 28px; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
 
-  .modal-box { padding: 38px 22px; }
-  .modal-h2 { font-size: 36px; }
+  .modal-box { padding: 40px 24px; }
+  .modal-h2 { font-size: 38px; }
 }
 
 @media (max-width: 480px) {
-  .hero-h1 { font-size: 50px; }
+  .hero-h1 { font-size: 52px; }
   .hero-btns { flex-direction: column; }
-  .hero-btns .btn { width: 100%; }
+  .hero-btns .btn { width: 100%; justify-content: center; }
   .stats { grid-template-columns: 1fr 1fr; }
 }
 ```
@@ -967,20 +877,22 @@ footer {
 </head>
 <body>
 
-  <!-- ── HEADER ──────────────────────────────────────────────── -->
+  <!-- ============================================================
+       HEADER
+  ============================================================ -->
 
   <header>
     <a href="#" class="logo">FITTER <span>FATHERS</span></a>
 
 ```
-<nav class="nav-links" id="navLinks">
+<nav class="nav-links" id="navLinks" aria-label="Main navigation">
   <a href="#about">About</a>
   <a href="#coaching">Coaching</a>
-  <a href="https://www.instagram.com/fitterfathers" target="_blank" rel="noopener" class="ig">@fitterfathers</a>
-  <button class="nav-book" onclick="openModal()">Book a Call</button>
+  <a href="https://www.instagram.com/fitterfathers" target="_blank" rel="noopener noreferrer" class="ig">@fitterfathers</a>
+  <button class="nav-cta" onclick="openModal()">Book a Call</button>
 </nav>
 
-<button class="hamburger" id="hamburger" aria-label="Open navigation menu">
+<button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
   <span></span>
   <span></span>
   <span></span>
@@ -989,25 +901,21 @@ footer {
 
   </header>
 
-  <!-- ── HERO ───────────────────────────────────────────────── -->
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
 
   <section id="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
 
 ```
-<div class="hero-photo-panel" aria-hidden="true">
-  <div class="ph-icon">📸</div>
-  <span>Your Photo Here</span>
-</div>
-<div class="hero-photo-fade" aria-hidden="true"></div>
-
 <div class="hero-content reveal">
   <p class="hero-eyebrow">Habit-Based Coaching for Fathers</p>
   <h1 class="hero-h1">
     BUILD THE<br>
     <span class="stroke">HABITS.</span><br>
-    <span class="green">CHANGE</span><br>
+    <span class="g">CHANGE</span><br>
     YOUR LIFE.
   </h1>
   <p class="hero-sub">
@@ -1041,101 +949,85 @@ footer {
 
   </section>
 
-  <!-- ── ABOUT ──────────────────────────────────────────────── -->
+  <!-- ============================================================
+       ABOUT
+  ============================================================ -->
 
   <section id="about">
-    <div class="about-wrap">
-
-```
-  <div class="img-stack reveal" aria-hidden="true">
-    <div class="img-main">
-      <div class="pi">📷</div>
-      <span>Primary Photo</span>
-      <span style="font-size:10px;opacity:0.4;">Training or Lifestyle Shot</span>
+    <div class="about-inner reveal">
+      <p class="eyebrow">My Story</p>
+      <h2 class="section-title">MORE THAN<br>A <span class="g">COACH.</span></h2>
+      <p>
+        I'm a <strong>father, husband, entrepreneur, podcast host, and coach</strong> — and I've been in recovery for over two decades after years of active addiction.
+      </p>
+      <p>
+        My success has been built entirely on the <strong>habits I uphold every single day</strong>. My mission is to share those habits and experiences with as many people as possible — through business and coaching, in the name of service.
+      </p>
+      <blockquote class="pull-quote">
+        "Our health should be our number one priority — without it, true success is impossible to achieve."
+      </blockquote>
+      <div class="pills">
+        <span class="pill active">Fitness</span>
+        <span class="pill active">Nutrition</span>
+        <span class="pill active">Mindset</span>
+        <span class="pill">Business</span>
+        <span class="pill">Recovery</span>
+        <span class="pill">Morning Routine</span>
+      </div>
+      <button class="btn btn-green" onclick="openModal()">→ Work With Me</button>
     </div>
-    <div class="img-small">
-      <div class="pi">🏋️</div>
-      <span>Action Shot</span>
-    </div>
-  </div>
-
-  <div class="about-body reveal">
-    <p class="eyebrow">My Story</p>
-    <h2 class="display-title">MORE THAN<br>A <span class="green">COACH.</span></h2>
-    <p>
-      I'm a <strong>father, husband, entrepreneur, podcast host, and coach</strong> — and I've been in recovery for over two decades after years of active addiction.
-    </p>
-    <p>
-      My success has been built on the <strong>habits I uphold every single day</strong>. My mission is to share those habits and experiences with as many people as possible — through business and coaching, in the name of service.
-    </p>
-    <blockquote class="pull-quote">
-      "Our health should be our number one priority — without it, true success is impossible to achieve."
-    </blockquote>
-    <div class="pills">
-      <span class="pill active">Fitness</span>
-      <span class="pill active">Nutrition</span>
-      <span class="pill active">Mindset</span>
-      <span class="pill">Business</span>
-      <span class="pill">Recovery</span>
-      <span class="pill">Morning Routine</span>
-    </div>
-    <button class="btn btn-green" onclick="openModal()">→ Work With Me</button>
-  </div>
-
-</div>
-```
-
   </section>
 
-  <!-- ── COACHING ────────────────────────────────────────────── -->
+  <!-- ============================================================
+       COACHING
+  ============================================================ -->
 
   <section id="coaching">
-    <div class="coaching-wrap">
+    <div class="coaching-inner">
+      <div class="coaching-header reveal">
+        <div>
+          <p class="eyebrow">Coaching Programs</p>
+          <h2 class="section-title">CHOOSE YOUR<br><span class="g">LEVEL.</span></h2>
+        </div>
+        <p class="coaching-desc">
+          Two tiers designed to meet you exactly where you are and take you further than you thought possible. Every father deserves a plan built around his life.
+        </p>
+      </div>
 
 ```
-  <div class="coaching-header reveal">
-    <div>
-      <p class="eyebrow">Coaching Programs</p>
-      <h2 class="display-title">CHOOSE YOUR<br><span class="green">LEVEL.</span></h2>
-    </div>
-    <p class="coaching-desc">
-      Two tiers designed to meet you where you are and take you where you want to go. Every father deserves a plan built around his life.
-    </p>
-  </div>
-
   <div class="cards reveal">
 
-    <!-- Level 1 -->
+    <!-- Card: Level 1 -->
     <div class="card">
       <p class="card-level">Level 01</p>
       <h3 class="card-name">The Foundation</h3>
       <p class="card-desc">Build your habits. Access proven programs, nutrition guidance, and consistent accountability.</p>
-      <ul class="feature-list">
-        <li class="feature-item"><span class="tick" aria-hidden="true">✓</span>Full Fitness Program Library</li>
-        <li class="feature-item"><span class="tick" aria-hidden="true">✓</span>Nutrition Library access</li>
-        <li class="feature-item"><span class="tick" aria-hidden="true">✓</span>Weekly morning routine emails</li>
-        <li class="feature-item"><span class="tick" aria-hidden="true">✓</span>Weekly automated check-ins</li>
-        <li class="feature-item"><span class="tick" aria-hidden="true">✓</span>Community &amp; accountability</li>
+      <ul class="features">
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Full Fitness Program Library</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Nutrition Library access</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Weekly morning routine emails</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Weekly automated check-ins</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Community &amp; accountability</li>
       </ul>
       <button class="card-btn outline" onclick="openModal()">Book a Discovery Call →</button>
     </div>
 
-    <!-- Level 2 -->
+    <!-- Card: Level 2 -->
     <div class="card featured">
       <div class="card-badge">Ultimate Experience</div>
       <p class="card-level">Level 02</p>
       <h3 class="card-name">All In</h3>
       <p class="card-desc">Complete life coaching — custom programming, business coaching, and direct 1-on-1 access.</p>
-      <ul class="feature-list">
-        <li class="feature-item"><span class="tick" aria-hidden="true">✓</span>Everything in Level 1</li>
-        <li class="feature-item"><span class="tick" aria-hidden="true">✓</span>Custom fitness programming</li>
-        <li class="feature-item"><span class="tick" aria-hidden="true">✓</span>Custom nutrition plan</li>
-        <li class="feature-item"><span class="tick" aria-hidden="true">✓</span>Business coaching included</li>
-        <li class="feature-item"><span class="tick" aria-hidden="true">✓</span>Weekly personal check-ins</li>
-        <li class="feature-item"><span class="tick" aria-hidden="true">✓</span><strong>30-min 1-on-1 call monthly</strong></li>
-        <li class="feature-item"><span class="tick" aria-hidden="true">✓</span>Mindset &amp; relationship development</li>
+      <ul class="features">
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Everything in Level 1</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Custom fitness programming</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Custom nutrition plan</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Business coaching included</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Weekly personal check-ins</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>30-min 1-on-1 call monthly</strong></li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Mindset &amp; relationship development</li>
       </ul>
-      <p class="card-limit"><span class="red-dot" aria-hidden="true"></span>Limited spots — apply to be considered</p>
+      <p class="card-limit"><span class="rdot" aria-hidden="true"></span>Limited spots — apply to be considered</p>
       <button class="card-btn solid" onclick="openModal()">Book a Discovery Call →</button>
     </div>
 
@@ -1145,29 +1037,31 @@ footer {
 
   </section>
 
-  <!-- ── CTA ────────────────────────────────────────────────── -->
+  <!-- ============================================================
+       CTA
+  ============================================================ -->
 
   <section id="cta">
     <div class="cta-glow" aria-hidden="true"></div>
     <div class="cta-inner reveal">
       <p class="eyebrow cta-eyebrow">Limited Availability</p>
-      <h2 class="cta-h2">READY TO<br>CHANGE<br><span class="green">YOUR LIFE?</span></h2>
+      <h2 class="cta-h2">READY TO<br>CHANGE<br><span class="g">YOUR LIFE?</span></h2>
       <p class="cta-sub">
-        Book a free 20-minute discovery call. We'll talk about where you are, where you want to go, and exactly how I can help get you there.
+        Book a free 20-minute discovery call. We'll talk about where you are, where you want to go, and exactly how I can help you get there.
       </p>
-      <button class="btn btn-green" style="font-size:15px;padding:18px 44px;" onclick="openModal()">
+      <button class="btn btn-green cta-btn" onclick="openModal()">
         → Book Your Free Discovery Call
       </button>
-      <div style="margin-top:18px;">
-        <p class="pulse-row">
-          <span class="pdot" aria-hidden="true"></span>
-          Limited spots available this month
-        </p>
-      </div>
+      <p class="pulse-row">
+        <span class="pdot" aria-hidden="true"></span>
+        Limited spots available this month
+      </p>
     </div>
   </section>
 
-  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
 
   <footer>
     <div class="footer-grid">
@@ -1175,9 +1069,9 @@ footer {
         <p class="footer-logo">FITTER <span>FATHERS</span></p>
         <p class="footer-tagline">Coaching fathers through real transformation — one habit at a time.</p>
         <div class="socials">
-          <a href="https://www.instagram.com/fitterfathers" target="_blank" rel="noopener" class="social-btn" title="@fitterfathers on Instagram">📷</a>
-          <a href="#" class="social-btn" title="Facebook">👥</a>
-          <a href="#" class="social-btn" title="YouTube">▶️</a>
+          <a href="https://www.instagram.com/fitterfathers" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Instagram">📷</a>
+          <a href="#" class="soc" aria-label="Facebook">👥</a>
+          <a href="#" class="soc" aria-label="YouTube">▶️</a>
         </div>
       </div>
       <div>
@@ -1192,13 +1086,13 @@ footer {
         <p class="footer-col-title">Connect</p>
         <ul class="footer-links">
           <li><a href="#about">About</a></li>
-          <li><a href="https://www.instagram.com/fitterfathers" target="_blank" rel="noopener">@fitterfathers</a></li>
-          <li><a href="mailto:info@thefitterfathers.com">info@thefitterfathers.com</a></li>
+          <li><a href="https://www.instagram.com/fitterfathers" target="_blank" rel="noopener noreferrer">@fitterfathers</a></li>
+          <li><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#102;&#111;&#64;&#116;&#104;&#101;&#102;&#105;&#116;&#116;&#101;&#114;&#102;&#97;&#116;&#104;&#101;&#114;&#115;&#46;&#99;&#111;&#109;">Contact Us</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">© 2025 Fitter Fathers. All rights reserved.</span>
+      <span class="footer-copy">&#169; 2025 Fitter Fathers. All rights reserved.</span>
       <div class="footer-legal">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms &amp; Conditions</a>
@@ -1206,99 +1100,104 @@ footer {
     </div>
   </footer>
 
-  <!-- ── MODAL ──────────────────────────────────────────────── -->
+  <!-- ============================================================
+       MODAL — Discovery Call
+  ============================================================ -->
 
   <div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-box">
-      <button class="modal-close" onclick="closeModal()" aria-label="Close modal">✕</button>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&#x2715;</button>
 
 ```
-  <!-- Success state -->
+  <!-- Success State -->
   <div class="modal-success" id="modalSuccess">
-    <div class="success-icon">✅</div>
-    <h3 class="success-h3">YOU'RE ON<br><span class="green">THE LIST.</span></h3>
+    <div class="success-icon">&#x2705;</div>
+    <h3 class="success-h3">YOU&#39;RE ON<br><span class="g">THE LIST.</span></h3>
     <p class="success-p">We received your info and will be in touch within 24 hours to schedule your free discovery call. This is where it starts.</p>
-    <button class="btn btn-green" onclick="closeModal()">← Back to Site</button>
+    <button class="btn btn-green" onclick="closeModal()">&#8592; Back to Site</button>
   </div>
 
-  <!-- Form state -->
+  <!-- Form State -->
   <div id="modalForm">
     <p class="modal-tag">Free Discovery Call</p>
-    <h2 class="modal-h2" id="modal-title">BOOK YOUR<br><span class="green">CALL.</span></h2>
-    <p class="modal-sub">Fill in your details and we'll reach out within 24 hours to lock in your free 20-minute session.</p>
+    <h2 class="modal-h2" id="modal-title">BOOK YOUR<br><span class="g">CALL.</span></h2>
+    <p class="modal-sub">Fill in your details and we&#39;ll reach out within 24 hours to lock in your free 20-minute session.</p>
 
     <div class="expect-box">
       <p class="expect-label">What to expect</p>
       <div class="expect-items">
-        ✦ 20-minute free call, personally with me<br>
-        ✦ We'll assess your goals &amp; lifestyle<br>
-        ✦ I'll recommend the right coaching level<br>
-        ✦ Zero obligation — just clarity
+        &#x2726; 20-minute free call, personally with me<br>
+        &#x2726; We&#39;ll assess your goals &amp; lifestyle<br>
+        &#x2726; I&#39;ll recommend the right coaching level<br>
+        &#x2726; Zero obligation &#8212; just clarity
       </div>
     </div>
 
     <div class="field">
-      <label for="fname">Full Name *</label>
+      <label for="fname">Full Name &#42;</label>
       <input type="text" id="fname" name="name" placeholder="Your full name" autocomplete="name" required>
     </div>
     <div class="field">
-      <label for="femail">Email Address *</label>
+      <label for="femail">Email Address &#42;</label>
       <input type="email" id="femail" name="email" placeholder="your@email.com" autocomplete="email" required>
     </div>
     <div class="field">
       <label for="flevel">Which level interests you?</label>
       <select id="flevel" name="level">
         <option value="">Not sure yet</option>
-        <option value="Level 1 - The Foundation">Level 1 — The Foundation</option>
-        <option value="Level 2 - All In">Level 2 — All In</option>
+        <option value="Level 1 - The Foundation">Level 1 &#8212; The Foundation</option>
+        <option value="Level 2 - All In">Level 2 &#8212; All In</option>
       </select>
     </div>
 
     <div class="form-error" id="formError" role="alert"></div>
 
     <button class="form-submit" id="formSubmit" onclick="submitForm()">
-      → Send My Info &amp; Book My Call
+      &#8594; Send My Info &amp; Book My Call
     </button>
-    <p class="form-note">Sent to info@thefitterfathers.com &nbsp;·&nbsp; We never share your data.</p>
+    <p class="form-note">Your info is sent directly to us &nbsp;&#183;&nbsp; We never share your data.</p>
   </div>
-
 </div>
 ```
 
   </div>
 
-  <!-- ── SCRIPTS ─────────────────────────────────────────────── -->
+  <!-- ============================================================
+       SCRIPTS
+  ============================================================ -->
 
   <script>
-    // Scroll reveal
-    const revealEls = document.querySelectorAll('.reveal');
-    const observer  = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('in'), i * 100);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    revealEls.forEach(el => observer.observe(el));
+    /* ── Scroll Reveal ── */
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      var io  = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry, i) {
+          if (entry.isIntersecting) {
+            setTimeout(function () { entry.target.classList.add('in'); }, i * 100);
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      els.forEach(function (el) { io.observe(el); });
+    })();
 
-    // Mobile nav
-    const hamburger = document.getElementById('hamburger');
-    const navLinks  = document.getElementById('navLinks');
+    /* ── Mobile Nav ── */
+    var hamburger = document.getElementById('hamburger');
+    var navLinks  = document.getElementById('navLinks');
 
-    hamburger.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', isOpen);
+    hamburger.addEventListener('click', function () {
+      var isOpen = navLinks.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', String(isOpen));
     });
-    navLinks.querySelectorAll('a, button').forEach(el => {
-      el.addEventListener('click', () => {
+    navLinks.querySelectorAll('a, button').forEach(function (el) {
+      el.addEventListener('click', function () {
         navLinks.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
       });
     });
 
-    // Modal
-    const modal = document.getElementById('modal');
+    /* ── Modal ── */
+    var modal = document.getElementById('modal');
 
     function openModal() {
       modal.classList.add('open');
@@ -1309,7 +1208,7 @@ footer {
       document.getElementById('fname').value  = '';
       document.getElementById('femail').value = '';
       document.getElementById('flevel').value = '';
-      document.getElementById('fname').focus();
+      setTimeout(function () { document.getElementById('fname').focus(); }, 100);
     }
 
     function closeModal() {
@@ -1317,74 +1216,80 @@ footer {
       document.body.style.overflow = '';
     }
 
-    modal.addEventListener('click', (e) => {
+    modal.addEventListener('click', function (e) {
       if (e.target === modal) closeModal();
     });
-    document.addEventListener('keydown', (e) => {
+    document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
     });
 
-    // Form submission
+    /* ── Form Submission ── */
     async function submitForm() {
-      const name  = document.getElementById('fname').value.trim();
-      const email = document.getElementById('femail').value.trim();
-      const level = document.getElementById('flevel').value;
-      const errEl = document.getElementById('formError');
-      const btn   = document.getElementById('formSubmit');
+      var name  = document.getElementById('fname').value.trim();
+      var email = document.getElementById('femail').value.trim();
+      var level = document.getElementById('flevel').value;
+      var errEl = document.getElementById('formError');
+      var btn   = document.getElementById('formSubmit');
 
       errEl.style.display = 'none';
 
       if (!name) {
-        errEl.textContent = '⚠ Please enter your full name.';
+        errEl.textContent   = '\u26A0 Please enter your full name.';
         errEl.style.display = 'block';
         document.getElementById('fname').focus();
         return;
       }
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        errEl.textContent = '⚠ Please enter a valid email address.';
+        errEl.textContent   = '\u26A0 Please enter a valid email address.';
         errEl.style.display = 'block';
         document.getElementById('femail').focus();
         return;
       }
 
       btn.disabled    = true;
-      btn.textContent = 'Sending…';
+      btn.textContent = 'Sending\u2026';
 
       try {
-        // Replace YOUR_FORM_ID with your Formspree form ID from formspree.io
-        const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        /* ─────────────────────────────────────────────────────────
+           REPLACE  YOUR_FORM_ID  with your Formspree form ID.
+           Get one free at https://formspree.io
+        ───────────────────────────────────────────────────────── */
+        var res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
           method:  'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body:    JSON.stringify({
-            name,
-            email,
+          body: JSON.stringify({
+            name:     name,
+            email:    email,
             level:    level || 'Not specified',
             _replyto: email,
-            _subject: `New Discovery Call — ${name}`
+            _subject: 'New Discovery Call \u2014 ' + name
           })
         });
-
         if (res.ok) {
           showSuccess();
         } else {
           openMailto(name, email, level);
           showSuccess();
         }
-      } catch {
+      } catch (err) {
         openMailto(name, email, level);
         showSuccess();
       }
 
       btn.disabled    = false;
-      btn.textContent = '→ Send My Info & Book My Call';
+      btn.textContent = '\u2192 Send My Info & Book My Call';
     }
 
     function openMailto(name, email, level) {
-      const subject = encodeURIComponent(`New Discovery Call — ${name}`);
-      const body    = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\nLevel: ${level || 'Not specified'}\n\nFrom thefitterfathers.com`
+      var s = encodeURIComponent('New Discovery Call \u2014 ' + name);
+      var b = encodeURIComponent(
+        'Name: '  + name  + '\n' +
+        'Email: ' + email + '\n' +
+        'Level: ' + (level || 'Not specified') + '\n\n' +
+        'Submitted from thefitterfathers.com'
       );
-      window.open(`mailto:info@thefitterfathers.com?subject=${subject}&body=${body}`, '_blank');
+      var addr = ['info', 'thefitterfathers.com'].join('@');
+      window.open('mailto:' + addr + '?subject=' + s + '&body=' + b, '_blank');
     }
 
     function showSuccess() {
