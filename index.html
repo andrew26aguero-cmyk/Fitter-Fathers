@@ -356,6 +356,69 @@ header {
 }
 .pill.active { border-color: var(--accent); color: var(--accent); }
 
+/* Accomplishment grid */
+.accom-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--border);
+  margin: 36px 0;
+}
+.accom {
+  padding: 24px 20px;
+  border-right: 1px solid var(--border);
+  background: var(--card);
+}
+.accom:last-child { border-right: none; }
+.accom-n {
+  font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
+  font-size: 40px;
+  color: var(--accent);
+  line-height: 1;
+}
+.accom-l {
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* Press strip */
+.press-strip {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+  margin-bottom: 32px;
+}
+.press-label {
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 14px;
+}
+.press-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+}
+.press-item {
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.press-div {
+  color: var(--border);
+  font-size: 18px;
+}
+
 /* ================================================================
    COACHING
 ================================================================ */
@@ -849,6 +912,12 @@ footer {
 
   #about { padding: 72px 24px; }
   .about-inner { max-width: 100%; }
+  .accom-grid { grid-template-columns: 1fr 1fr; }
+  .accom { border-bottom: 1px solid var(--border); }
+  .accom:nth-child(2) { border-right: none; }
+  .accom:nth-child(3), .accom:nth-child(4) { border-bottom: none; }
+  .accom:nth-child(4) { border-right: none; }
+  .press-logos { gap: 8px 12px; }
 
   #coaching { padding: 72px 24px; }
   .coaching-header { grid-template-columns: 1fr; gap: 16px; }
@@ -919,7 +988,7 @@ footer {
     YOUR LIFE.
   </h1>
   <p class="hero-sub">
-    From fitness and nutrition to mindset and business — I coach fathers through real transformation, one daily habit at a time.
+    Habits will make you or break you. I built Fitter Fathers to give fathers the exact system that changed my life — and help them become the men their families need them to be.
   </p>
   <div class="hero-btns">
     <button class="btn btn-green" onclick="openModal()">→ Book a Free Consultation</button>
@@ -955,27 +1024,68 @@ footer {
 
   <section id="about">
     <div class="about-inner reveal">
-      <p class="eyebrow">My Story</p>
-      <h2 class="section-title">MORE THAN<br>A <span class="g">COACH.</span></h2>
-      <p>
-        I'm a <strong>father, husband, entrepreneur, podcast host, and coach</strong> — and I've been in recovery for over two decades after years of active addiction.
-      </p>
-      <p>
-        My success has been built entirely on the <strong>habits I uphold every single day</strong>. My mission is to share those habits and experiences with as many people as possible — through business and coaching, in the name of service.
-      </p>
-      <blockquote class="pull-quote">
-        "Our health should be our number one priority — without it, true success is impossible to achieve."
-      </blockquote>
-      <div class="pills">
-        <span class="pill active">Fitness</span>
-        <span class="pill active">Nutrition</span>
-        <span class="pill active">Mindset</span>
-        <span class="pill">Business</span>
-        <span class="pill">Recovery</span>
-        <span class="pill">Morning Routine</span>
-      </div>
-      <button class="btn btn-green" onclick="openModal()">→ Work With Me</button>
+      <p class="eyebrow">The Story Behind the Coach</p>
+      <h2 class="section-title">BAD HABITS<br>ALMOST <span class="g">KILLED ME.</span></h2>
+
+```
+  <p>
+    From 13 to 23, I was a full-blown addict. Drugs. Alcohol. A decade of bad decisions that nearly cost me everything. I wasn't just struggling — I was lost. And I had no idea how to find my way back.
+  </p>
+  <p>
+    Getting sober didn't hand me a perfect life. It handed me something better: <strong>a system.</strong> Faith. Muay Thai. Nutrition. Structure. A plan I followed like my life depended on it — because it did. That system became the foundation of everything I've built since.
+  </p>
+  <p>
+    The Meatball Shop. Seamore's. Kreatures of Habit. Competing as an athlete. Becoming the husband and father I wanted to be. <strong>Not one day of that happened without the habits I protect every single morning.</strong>
+  </p>
+
+  <blockquote class="pull-quote">
+    "Bad habits almost killed me — and great habits have made me the man I am today. That's why I coach."
+  </blockquote>
+
+  <p>
+    I built Fitter Fathers because I know what it takes to change — and I know most men just need the right system and someone in their corner. <strong>That's what I'm here for.</strong>
+  </p>
+
+  <div class="accom-grid">
+    <div class="accom">
+      <div class="accom-n">20+</div>
+      <div class="accom-l">Years Sober</div>
     </div>
+    <div class="accom">
+      <div class="accom-n">500+</div>
+      <div class="accom-l">Men Coached</div>
+    </div>
+    <div class="accom">
+      <div class="accom-n">3+</div>
+      <div class="accom-l">Businesses Built</div>
+    </div>
+    <div class="accom">
+      <div class="accom-n">Top 10</div>
+      <div class="accom-l">Health Podcast</div>
+    </div>
+  </div>
+
+  <div class="press-strip">
+    <p class="press-label">As Seen In</p>
+    <div class="press-logos">
+      <span class="press-item">Good Morning America</span>
+      <span class="press-div" aria-hidden="true">·</span>
+      <span class="press-item">Men's Health</span>
+      <span class="press-div" aria-hidden="true">·</span>
+      <span class="press-item">GQ</span>
+      <span class="press-div" aria-hidden="true">·</span>
+      <span class="press-item">Entrepreneur</span>
+      <span class="press-div" aria-hidden="true">·</span>
+      <span class="press-item">Mind Pump</span>
+      <span class="press-div" aria-hidden="true">·</span>
+      <span class="press-item">Today Show</span>
+    </div>
+  </div>
+
+  <button class="btn btn-green" onclick="openModal()">&#8594; Work With Me</button>
+</div>
+```
+
   </section>
 
   <!-- ============================================================
@@ -990,7 +1100,7 @@ footer {
           <h2 class="section-title">CHOOSE YOUR<br><span class="g">LEVEL.</span></h2>
         </div>
         <p class="coaching-desc">
-          Two tiers designed to meet you exactly where you are and take you further than you thought possible. Every father deserves a plan built around his life.
+          Two levels. One mission. Whether you're starting from scratch or ready to go all in — there's a program built for exactly where you are right now.
         </p>
       </div>
 
@@ -1017,14 +1127,14 @@ footer {
       <div class="card-badge">Ultimate Experience</div>
       <p class="card-level">Level 02</p>
       <h3 class="card-name">All In</h3>
-      <p class="card-desc">Complete life coaching — custom programming, business coaching, and direct 1-on-1 access.</p>
+      <p class="card-desc">Your training, your nutrition, your life — built around you. This is fully tailored coaching with direct access to me every step of the way.</p>
       <ul class="features">
         <li class="feature"><span class="tick" aria-hidden="true">✓</span>Everything in Level 1</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Custom fitness programming</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Custom nutrition plan</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Business coaching included</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Weekly personal check-ins</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>30-min 1-on-1 call monthly</strong></li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>Fully custom fitness programming</strong> — built for your body, schedule &amp; goals</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>Personalized nutrition plan</strong> — tailored macros, meal timing &amp; strategy</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Weekly personal check-ins with Michael</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>Direct messaging access</strong> — ask questions, get answers, stay on track</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>Weekly live community calls</strong> — accountability, Q&amp;A &amp; shared wins</li>
         <li class="feature"><span class="tick" aria-hidden="true">✓</span>Mindset &amp; relationship development</li>
       </ul>
       <p class="card-limit"><span class="rdot" aria-hidden="true"></span>Limited spots — apply to be considered</p>
