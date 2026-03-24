@@ -420,6 +420,59 @@ header {
 }
 
 /* ================================================================
+   HOW IT WORKS
+================================================================ */
+#how {
+  padding: 100px 48px;
+  background: var(--deep);
+  border-top: 1px solid var(--border);
+}
+.how-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 52px;
+}
+.step-item {
+  padding: 36px 28px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  position: relative;
+  transition: border-color 0.3s;
+}
+.step-item:hover { border-color: var(--accent); }
+.step-num {
+  font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
+  font-size: 56px;
+  line-height: 1;
+  color: var(--border);
+  margin-bottom: 16px;
+  transition: color 0.3s;
+}
+.step-item:hover .step-num { color: var(--accent); }
+.step-title {
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.step-desc {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ================================================================
    COACHING
 ================================================================ */
 #coaching {
@@ -492,6 +545,26 @@ header {
   font-size: 36px;
   letter-spacing: 1px;
   margin-bottom: 10px;
+}
+.card-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+.card-price-n {
+  font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
+  font-size: 48px;
+  color: var(--white);
+  line-height: 1;
+}
+.card-price-suffix {
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 .card-desc {
   font-size: 14px;
@@ -919,6 +992,9 @@ footer {
   .accom:nth-child(4) { border-right: none; }
   .press-logos { gap: 8px 12px; }
 
+  #how { padding: 72px 24px; }
+  .steps { grid-template-columns: 1fr; }
+
   #coaching { padding: 72px 24px; }
   .coaching-header { grid-template-columns: 1fr; gap: 16px; }
   .cards { grid-template-columns: 1fr; max-width: 460px; }
@@ -980,7 +1056,7 @@ footer {
 
 ```
 <div class="hero-content reveal">
-  <p class="hero-eyebrow">Habit-Based Coaching for Fathers</p>
+  <p class="hero-eyebrow">For the Father Who Knows He Has More to Give</p>
   <h1 class="hero-h1">
     BUILD THE<br>
     <span class="stroke">HABITS.</span><br>
@@ -988,7 +1064,7 @@ footer {
     YOUR LIFE.
   </h1>
   <p class="hero-sub">
-    Habits will make you or break you. I built Fitter Fathers to give fathers the exact system that changed my life — and help them become the men their families need them to be.
+    You show up for everyone else. Your job. Your family. Your responsibilities. But somewhere along the way, you stopped showing up for yourself. I know that feeling — and I know exactly how to fix it.
   </p>
   <div class="hero-btns">
     <button class="btn btn-green" onclick="openModal()">→ Book a Free Consultation</button>
@@ -1043,7 +1119,10 @@ footer {
   </blockquote>
 
   <p>
-    I built Fitter Fathers because I know what it takes to change — and I know most men just need the right system and someone in their corner. <strong>That's what I'm here for.</strong>
+    Here's what I've learned from coaching hundreds of men: <strong>you already have everything you need.</strong> The drive is there. The love for your family is there. What's missing is a proven system, a clear plan, and someone who's walked the road ahead of you holding you accountable to who you said you wanted to be.
+  </p>
+  <p>
+    That's what Fitter Fathers is. Not a program. <strong>A proven system built on the habits that changed my life — now built around yours.</strong>
   </p>
 
   <div class="accom-grid">
@@ -1089,6 +1168,34 @@ footer {
   </section>
 
   <!-- ============================================================
+       HOW IT WORKS — StoryBrand Plan
+  ============================================================ -->
+
+  <section id="how">
+    <div class="how-inner reveal">
+      <p class="eyebrow">The Process</p>
+      <h2 class="section-title">THREE STEPS.<br><span class="g">ONE MISSION.</span></h2>
+      <div class="steps">
+        <div class="step-item">
+          <div class="step-num">01</div>
+          <h3 class="step-title">Book Your Free Call</h3>
+          <p class="step-desc">We get on a call. You tell me where you are. I tell you exactly what it's going to take. No pressure — just clarity.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">02</div>
+          <h3 class="step-title">Get Your Custom Plan</h3>
+          <p class="step-desc">I build a program around your life — your schedule, your body, your goals. Not a template. A system designed for you.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">03</div>
+          <h3 class="step-title">Become the Man You Said You Would</h3>
+          <p class="step-desc">You execute. I hold you accountable. Week by week, habit by habit — you become stronger, sharper, and more present for the people who need you most.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
        COACHING
   ============================================================ -->
 
@@ -1100,7 +1207,7 @@ footer {
           <h2 class="section-title">CHOOSE YOUR<br><span class="g">LEVEL.</span></h2>
         </div>
         <p class="coaching-desc">
-          Two levels. One mission. Whether you're starting from scratch or ready to go all in — there's a program built for exactly where you are right now.
+          Two levels. One mission. Start with the system, or go all in with me personally. Either way — the work begins the moment you decide.
         </p>
       </div>
 
@@ -1111,15 +1218,20 @@ footer {
     <div class="card">
       <p class="card-level">Level 01</p>
       <h3 class="card-name">The Foundation</h3>
-      <p class="card-desc">Build your habits. Access proven programs, nutrition guidance, and consistent accountability.</p>
+      <div class="card-price">
+        <span class="card-price-n">$25</span>
+        <span class="card-price-suffix">/ month</span>
+      </div>
+      <p class="card-desc">Start here. Build the habits, lock in the routine, and prove to yourself what's possible when you commit to the process.</p>
       <ul class="features">
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Full Fitness Program Library</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Nutrition Library access</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Weekly morning routine emails</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Weekly automated check-ins</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Community &amp; accountability</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>4–6 week training program</strong> — structured, progressive, built to move</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Access to my full Fitness Program Library</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Nutrition Library &amp; guidance</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Weekly morning routine emails — the habits that set the tone</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Bi-weekly community calls — accountability &amp; real talk</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Weekly automated check-ins to keep you honest</li>
       </ul>
-      <button class="card-btn outline" onclick="openModal()">Book a Discovery Call →</button>
+      <button class="card-btn outline" onclick="openModal()">Get Started →</button>
     </div>
 
     <!-- Card: Level 2 -->
@@ -1127,14 +1239,19 @@ footer {
       <div class="card-badge">Ultimate Experience</div>
       <p class="card-level">Level 02</p>
       <h3 class="card-name">All In</h3>
-      <p class="card-desc">Your training, your nutrition, your life — built around you. This is fully tailored coaching with direct access to me every step of the way.</p>
+      <div class="card-price">
+        <span class="card-price-n">$200</span>
+        <span class="card-price-suffix">/ month</span>
+      </div>
+      <p class="card-desc">This is me, fully invested in you. Your training. Your food. Your mornings. I built this level for the father who's done halfway — and ready to go all in.</p>
       <ul class="features">
         <li class="feature"><span class="tick" aria-hidden="true">✓</span>Everything in Level 1</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>Fully custom fitness programming</strong> — built for your body, schedule &amp; goals</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>Personalized nutrition plan</strong> — tailored macros, meal timing &amp; strategy</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Weekly personal check-ins with Michael</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>Direct messaging access</strong> — ask questions, get answers, stay on track</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>Weekly live community calls</strong> — accountability, Q&amp;A &amp; shared wins</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>Custom 12-week training program</strong> — written for your body, your schedule, your life</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>Personalized nutrition coaching</strong> — I'll show you exactly what to eat, when, and why. Real food. Real results.</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>Weekly morning routine emails</strong> — the habits I live by, straight to your inbox every week</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>Weekly 1-on-1 check-ins with me</strong> — we talk, we adjust, we keep moving forward</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>Direct access to me</strong> via video, audio or message — when you need me, I'm there</li>
+        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>Weekly live community calls</strong> — real men, real accountability, real wins</li>
         <li class="feature"><span class="tick" aria-hidden="true">✓</span>Mindset &amp; relationship development</li>
       </ul>
       <p class="card-limit"><span class="rdot" aria-hidden="true"></span>Limited spots — apply to be considered</p>
@@ -1154,10 +1271,10 @@ footer {
   <section id="cta">
     <div class="cta-glow" aria-hidden="true"></div>
     <div class="cta-inner reveal">
-      <p class="eyebrow cta-eyebrow">Limited Availability</p>
+      <p class="eyebrow cta-eyebrow">The Decision Is Yours</p>
       <h2 class="cta-h2">READY TO<br>CHANGE<br><span class="g">YOUR LIFE?</span></h2>
       <p class="cta-sub">
-        Book a free 20-minute discovery call. We'll talk about where you are, where you want to go, and exactly how I can help you get there.
+        A year from now you'll either be stronger, leaner, and more locked in than you've ever been — or you'll be exactly where you are right now. The only difference is what you decide today.
       </p>
       <button class="btn btn-green cta-btn" onclick="openModal()">
         → Book Your Free Discovery Call
@@ -1255,8 +1372,8 @@ footer {
       <label for="flevel">Which level interests you?</label>
       <select id="flevel" name="level">
         <option value="">Not sure yet</option>
-        <option value="Level 1 - The Foundation">Level 1 &#8212; The Foundation</option>
-        <option value="Level 2 - All In">Level 2 &#8212; All In</option>
+        <option value="Level 1 - The Foundation - $25/mo">Level 1 &#8212; The Foundation ($25/mo)</option>
+        <option value="Level 2 - All In - $200/mo">Level 2 &#8212; All In ($200/mo)</option>
       </select>
     </div>
 
