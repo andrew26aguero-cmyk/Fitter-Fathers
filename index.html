@@ -2,1528 +2,468 @@
 
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Fitter Fathers — Habit-based fitness and life coaching for dads who are ready to show up stronger.">
-  <title>Fitter Fathers | Coaching for Dads Who Are Ready</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Fitter Fathers | Coaching for Dads Who Are Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
 
-```
-/* ================================================================
-   RESET
-================================================================ */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  background: #090909;
-  color: #F2F0EB;
-  font-family: 'Barlow', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 400;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-a { color: inherit; text-decoration: none; }
-ul { list-style: none; }
-button { font-family: inherit; cursor: pointer; border: none; background: none; }
-img { display: block; max-width: 100%; }
+<!-- ════════════════════════════════════════════════════════════════
+     ✏️  EDIT ALL COPY HERE — everything below this block is design.
+     ════════════════════════════════════════════════════════════════ -->
 
-/* ================================================================
-   DESIGN TOKENS
-================================================================ */
-:root {
-  --black:     #090909;
-  --deep:      #0f0f0f;
-  --card:      #141414;
-  --border:    #1e1e1e;
-  --accent:    #4a7a48;
-  --accent-lt: #5c8c5a;
-  --white:     #F2F0EB;
-  --muted:     #888888;
-  --gray:      #444444;
-  --red:       #E03E2D;
-  --f-display:   'Bebas Neue', 'Arial Black', Impact, sans-serif;
-  --f-condensed: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  --f-body:      'Barlow', 'Helvetica Neue', Arial, sans-serif;
-}
+<script>
+const COPY = {
 
-/* ================================================================
-   UTILITIES
-================================================================ */
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 16px;
-}
-.eyebrow::before {
-  content: '';
-  display: block;
-  width: 26px;
-  height: 2px;
-  background: var(--accent);
-  flex-shrink: 0;
-}
+  brand: "Fitter Fathers",
+  everfitURL: "https://thefitterfathers.com/",
 
-.section-title {
-  font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
-  font-size: clamp(42px, 5.5vw, 72px);
-  line-height: 0.93;
-  letter-spacing: 1px;
-  margin-bottom: 22px;
-}
-.section-title .g { color: var(--accent); }
+  nav: {
+    links:      ["About", "Coaching", "@fitterfathers"],
+    linkHrefs:  ["#about", "#coaching", "https://www.instagram.com/fitterfathers"],
+    ctaLabel:   "Start Today \u2192",
+  },
 
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.reveal.in { opacity: 1; transform: none; }
+  hero: {
+    eyebrow:   "For the dad who's done letting himself down",
+    headline:  ["Your Family Needs", "The Best", "Version of You."],
+    accentLine: 1,
+    subhead:   "You show up for your job. You show up for your kids. But somewhere along the way, you stopped showing up for yourself — and you feel it every single day. That ends now.",
+    ctaPrimary:        "Start Today \u2192",
+    ctaSecondary:      "See Coaching Levels \u2193",
+    ctaSecondaryHref:  "#coaching",
+    stats: [
+      { num: "20+",    label: "Years Sober" },
+      { num: "500+",   label: "Men Coached" },
+      { num: "2",      label: "Coaching Levels" },
+      { num: "0",      label: "Excuses Accepted" },
+    ],
+  },
 
-/* ── Buttons ── */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  padding: 15px 32px;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s, border-color 0.2s, color 0.2s;
-  text-decoration: none;
-}
-.btn-green { background: var(--accent); color: #000; }
-.btn-green:hover { background: var(--accent-lt); transform: translateY(-2px); }
-.btn-ghost {
-  background: transparent;
-  color: var(--white);
-  border: 1.5px solid rgba(255,255,255,0.2);
-}
-.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+  problem: {
+    eyebrow:   "Sound Familiar?",
+    headline:  ["You're Not Lazy.", "You're Just Lost."],
+    accentLine: 1,
+    body: [
+      "You wake up tired. You skip the workout — again. You tell yourself tomorrow will be different, but it never is. And the worst part? You know exactly what you're capable of. You just can't find your way back there.",
+      "That gap between who you are and who you know you can be — that's the real enemy. Not motivation. Not time. Not your schedule. It's the absence of a proven system and someone in your corner who won't let you off the hook.",
+      "I've been in that place. Mine almost killed me. Now I coach men out of it every single day.",
+    ],
+    callout: ["The gap between who you ", "are", " and who you know you can ", "be", " — that's what we close. Together."],
+  },
 
-/* ================================================================
-   HEADER / NAV
-================================================================ */
-header {
-  position: fixed;
-  inset: 0 0 auto 0;
-  z-index: 500;
-  height: 66px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 48px;
-  background: rgba(9,9,9,0.97);
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(12px);
-}
+  story: {
+    eyebrow:   "The Story Behind the Coach",
+    headline:  ["Bad Habits", "Almost Killed Me."],
+    accentLine: 0,
+    body: [
+      "From 13 to 23, I was a full-blown addict. Drugs. Alcohol. A decade of decisions that nearly took everything from me. I wasn't struggling — I was gone.",
+      "Getting sober didn't give me a perfect life. It gave me something better: a system. Faith. Muay Thai. Nutrition. Structure. A daily plan I followed like my life depended on it — because it did. That system became the foundation of everything.",
+      "The Meatball Shop. Seamore's. Kreatures of Habit. Competing as a professional athlete. Becoming the husband and father I always knew I could be. None of it happened without the habits I protect every single morning.",
+      "Here's what 500+ men have taught me: the drive is already inside you. The love for your family is there. What's missing is a proven system, a clear plan, and someone who actually gives a damn whether you follow through.",
+    ],
+    quote:    "Bad habits almost killed me — great habits made me the man I am today. That's the only reason I coach.",
+    ctaLabel: "I'm Ready — Let's Work \u2192",
+    stats: [
+      { num: "20+",    label: "Years Sober" },
+      { num: "500+",   label: "Men Coached" },
+      { num: "3+",     label: "Businesses Built" },
+      { num: "Top 10", label: "Health Podcast" },
+    ],
+    pressLabel: "As Seen In",
+    press: ["Good Morning America", "Men's Health", "GQ", "Entrepreneur", "Mind Pump", "Today Show"],
+  },
 
-.logo {
-  font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
-  font-size: 22px;
-  letter-spacing: 5px;
-  color: var(--white);
-  flex-shrink: 0;
-}
-.logo span { color: var(--accent); }
+  process: {
+    eyebrow:   "The Plan",
+    headline:  ["Three Steps.", "One Mission."],
+    accentLine: 1,
+    steps: [
+      {
+        num:   "01",
+        title: "Start Today \u2014 No Excuses",
+        body:  "Stop waiting for the right moment. There isn't one. Sign up, put yourself in the game, and that decision alone changes everything.",
+      },
+      {
+        num:   "02",
+        title: "Get Your Custom System",
+        body:  "I build a program around your actual life — your schedule, your body, your goals. Not a template. A real system built for the man you're becoming.",
+      },
+      {
+        num:   "03",
+        title: "Become the Father You Said You'd Be",
+        body:  "You execute. I hold you accountable. Week by week, habit by habit — you show up stronger, sharper, and more present for the people who need you most.",
+      },
+    ],
+  },
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 36px;
-}
-.nav-links a {
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--muted);
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--white); }
-.nav-links .ig { color: var(--accent); }
-.nav-links .ig:hover { color: var(--accent-lt); }
+  pricing: {
+    eyebrow:   "Coaching Programs",
+    headline:  ["Choose Your", "Level."],
+    accentLine: 1,
+    intro:     "Two levels. One mission. The work starts the moment you decide.",
+    plans: [
+      {
+        badge:       null,
+        level:       "Level 01",
+        name:        "The Foundation",
+        price:       "$25",
+        period:      "/ month",
+        description: "Start here. Build the system. Lock in your routine. Prove to yourself what's possible when you actually commit.",
+        features: [
+          { bold: "4\u20136 week training program", rest: " \u2014 structured, progressive, built to move" },
+          { bold: null, rest: "Full Fitness Program Library access" },
+          { bold: null, rest: "Nutrition Library & real-food guidance" },
+          { bold: "Bi-weekly community calls", rest: " \u2014 real men, real talk, real accountability" },
+          { bold: null, rest: "Weekly automated check-ins to keep you honest" },
+        ],
+        ctaLabel: "Start With The Foundation \u2192",
+        note:     null,
+      },
+      {
+        badge:       "Most Committed",
+        level:       "Level 02",
+        name:        "All In",
+        price:       "$200",
+        period:      "/ month",
+        description: "This is me, fully invested in you. Your training. Your food. Your mornings. Built for the father who is done doing things halfway.",
+        features: [
+          { bold: null, rest: "Everything in Level 1" },
+          { bold: "Custom 12-week training program", rest: " \u2014 written for your body, your schedule, your life" },
+          { bold: "Personalized nutrition coaching", rest: " \u2014 real food, real results, no guesswork" },
+          { bold: "Weekly morning routine emails", rest: " \u2014 the habits I live by, straight to your inbox every week" },
+          { bold: "Weekly 1-on-1 check-ins with me", rest: " \u2014 we talk, we adjust, we keep moving" },
+          { bold: "Direct access to me", rest: " \u2014 video, audio, or message. When you need me, I'm there." },
+          { bold: "Weekly live community calls", rest: " \u2014 the fam shows up and holds each other accountable" },
+        ],
+        ctaLabel: "I'm Going All In \u2192",
+        note:     "Limited spots \u2014 serious inquiries only",
+      },
+    ],
+  },
 
-.nav-cta {
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  background: var(--accent);
-  color: #000;
-  padding: 10px 22px;
-  transition: background 0.2s;
-  cursor: pointer;
-  border: none;
-  white-space: nowrap;
-}
-.nav-cta:hover { background: var(--accent-lt); }
+  stakes: {
+    eyebrow:  "The Decision Is Yours",
+    headline: "A Year From Now, Who Are You?",
+    body:     "Stronger. Leaner. Locked in. The dad your kids brag about. The husband your partner fell for. The man you promised yourself you'd become — or exactly where you are right now. The only variable is what you do today.",
+    ctaLabel: "I Choose Better. Let's Go \u2192",
+    sub:      "Limited spots available this month. Don't be the reason you don't do this.",
+  },
 
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 4px;
-}
-.hamburger span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--white);
-  border-radius: 1px;
-  transition: all 0.3s;
-}
+  footer: {
+    tagline: "Coaching fathers through real transformation \u2014 one habit at a time.",
+    coachingLinks: [
+      { label: "Level 1 \u2014 The Foundation", href: "#coaching" },
+      { label: "Level 2 \u2014 All In",         href: "#coaching" },
+      { label: "Join Today",                    href: "https://thefitterfathers.com/" },
+    ],
+    connectLinks: [
+      { label: "About",          href: "#about" },
+      { label: "@fitterfathers", href: "https://www.instagram.com/fitterfathers" },
+      { label: "Contact Us",     href: "mailto:info@thefitterfathers.com" },
+    ],
+    legal: "\u00A9 2025 Fitter Fathers. All rights reserved.",
+    legalLinks: [
+      { label: "Privacy Policy",     href: "#" },
+      { label: "Terms & Conditions", href: "#" },
+    ],
+  },
 
-/* ================================================================
-   HERO
-================================================================ */
-#hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 66px 48px 80px;
-  overflow: hidden;
-}
+}; // ← END OF COPY — do not edit below this line
+</script>
 
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 65% 40%, rgba(74,122,72,0.09) 0%, transparent 60%),
-    linear-gradient(to bottom, rgba(9,9,9,0.1) 0%, rgba(9,9,9,0.92) 100%);
-}
-.hero-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(74,122,72,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(74,122,72,0.04) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
+<!-- ════════════════════════════════════════════════════════════════
+     🎨  DESIGN STARTS HERE — do not edit for copy changes
+     ════════════════════════════════════════════════════════════════ -->
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 780px;
+<style>
+:root{
+  --black:     #080b09;
+  --off-black: #0c110d;
+  --card:      #101510;
+  --sage:      #7a9d7d;
+  --sage-lt:   #a3c0a6;
+  --sage-pale: #c5d9c7;
+  --sage-dim:  #4c6a4f;
+  --sage-glow: rgba(122,157,125,0.07);
+  --white:     #edf3ee;
+  --muted:     #697a6a;
+  --border:    rgba(122,157,125,0.15);
 }
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;font-size:17px;line-height:1.68;overflow-x:hidden;}
 
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 22px;
-}
-.hero-eyebrow::before {
-  content: '';
-  display: block;
-  width: 30px;
-  height: 2px;
-  background: var(--accent);
-  flex-shrink: 0;
-}
+/* TYPOGRAPHY */
+.eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--sage);margin-bottom:.9rem;}
+.sage-line{width:44px;height:2px;background:var(--sage);margin-bottom:1.5rem;}
+h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.6rem,5.5vw,4.8rem);line-height:.95;letter-spacing:.04em;color:var(--white);margin-bottom:1.4rem;}
+h2 .ac{color:var(--sage-lt);}
+.body-p{color:rgba(237,243,238,.62);font-size:1.02rem;margin-bottom:1.1rem;line-height:1.7;}
+.body-p strong{color:var(--white);font-weight:500;}
 
-.hero-h1 {
-  font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
-  font-size: clamp(72px, 11vw, 148px);
-  line-height: 0.88;
-  letter-spacing: 2px;
-  margin-bottom: 28px;
-}
-.hero-h1 .stroke {
-  -webkit-text-stroke: 2px var(--white);
-  color: transparent;
-}
-.hero-h1 .g { color: var(--accent); }
+/* BUTTONS */
+.btn-p{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.86rem;letter-spacing:.16em;text-transform:uppercase;background:var(--sage);color:var(--black);padding:15px 34px;text-decoration:none;transition:background .2s,transform .15s;border:none;cursor:pointer;}
+.btn-p:hover{background:var(--sage-lt);transform:translateY(-2px);}
+.btn-ghost{display:inline-flex;align-items:center;gap:.4rem;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:.84rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white);text-decoration:none;opacity:.5;transition:opacity .2s;}
+.btn-ghost:hover{opacity:1;}
+.btn-dk{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.16em;text-transform:uppercase;background:var(--black);color:var(--sage-pale);padding:17px 40px;text-decoration:none;transition:background .2s,transform .15s;}
+.btn-dk:hover{background:#182019;transform:translateY(-2px);}
 
-.hero-sub {
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 1.75;
-  color: var(--muted);
-  max-width: 520px;
-  margin-bottom: 40px;
-}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 5vw;background:linear-gradient(to bottom,rgba(8,11,9,.97),transparent);backdrop-filter:blur(10px);}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.12em;color:var(--sage-lt);text-decoration:none;}
+.nav-links{display:flex;gap:1.8rem;align-items:center;}
+.nav-a{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white);text-decoration:none;opacity:.6;transition:opacity .2s,color .2s;}
+.nav-a:hover{opacity:1;color:var(--sage-lt);}
+.nav-cta{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;background:var(--sage);color:var(--black);padding:10px 18px;text-decoration:none;transition:background .2s;}
+.nav-cta:hover{background:var(--sage-lt);}
 
-.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:140px 5vw 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 70% 36%,rgba(122,157,125,.09) 0%,transparent 70%),radial-gradient(ellipse 40% 70% at 15% 65%,rgba(122,157,125,.04) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%237a9d7d' fill-opacity='0.022'%3E%3Cpath d='M0 0h40v40H0zm40 40h40v40H40z'/%3E%3C/g%3E%3C/svg%3E");}
+.h-eye{opacity:0;animation:fu .7s .15s forwards;}
+.h-rule{width:50px;height:2px;background:var(--sage);margin-bottom:1.8rem;opacity:0;animation:fu .6s .1s forwards;}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.4rem,10vw,9rem);line-height:.9;letter-spacing:.02em;color:var(--white);max-width:940px;opacity:0;animation:fu .9s .3s forwards;}
+.hero h1 .ac{color:var(--sage-lt);}
+.h-sub{max-width:540px;margin-top:1.8rem;color:rgba(237,243,238,.55);font-size:1.04rem;line-height:1.72;opacity:0;animation:fu .8s .5s forwards;}
+.h-actions{display:flex;gap:1.1rem;align-items:center;flex-wrap:wrap;margin-top:2.6rem;opacity:0;animation:fu .8s .65s forwards;}
+.h-stats{display:flex;gap:2.8rem;flex-wrap:wrap;margin-top:5rem;opacity:0;animation:fu .8s .85s forwards;}
+.snum{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--sage);letter-spacing:.04em;line-height:1;}
+.slbl{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:.25rem;}
 
-/* Stats bar */
-.stats {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid var(--border);
-  margin-top: 72px;
-  padding-top: 36px;
-}
-.stat {
-  padding-right: 24px;
-  border-right: 1px solid var(--border);
-  margin-right: 24px;
-}
-.stat:last-child { border-right: none; padding-right: 0; margin-right: 0; }
-.stat-n {
-  font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
-  font-size: 50px;
-  color: var(--accent);
-  line-height: 1;
-}
-.stat-l {
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-top: 4px;
-}
+/* SECTIONS */
+section{padding:100px 5vw;}
+.bg-off{background:var(--off-black);}
 
-/* ================================================================
-   ABOUT
-================================================================ */
-#about {
-  padding: 100px 48px;
-  background: var(--deep);
-  border-top: 1px solid var(--border);
-}
-.about-inner {
-  max-width: 760px;
-  margin: 0 auto;
-}
-.about-inner p {
-  font-size: 17px;
-  font-weight: 300;
-  line-height: 1.85;
-  color: var(--muted);
-  margin-bottom: 18px;
-}
-.about-inner p strong { color: var(--white); font-weight: 500; }
+/* PROBLEM */
+.prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:center;margin-top:3rem;}
+@media(max-width:800px){.prob-grid{grid-template-columns:1fr;}}
+.callout-box{border-left:3px solid var(--sage);padding:1.6rem 1.8rem;background:var(--sage-glow);font-family:'Bebas Neue',sans-serif;font-size:clamp(1.5rem,2.8vw,2.1rem);letter-spacing:.05em;color:var(--white);line-height:1.25;}
+.callout-box .ac{color:var(--sage-lt);}
 
-.pull-quote {
-  border-left: 3px solid var(--accent);
-  padding: 14px 22px;
-  margin: 30px 0;
-  background: rgba(74,122,72,0.05);
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 20px;
-  font-style: italic;
-  font-weight: 600;
-  line-height: 1.45;
-  color: var(--white);
-}
+/* STORY */
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:start;}
+@media(max-width:800px){.story-grid{grid-template-columns:1fr;}}
+.s-quote{border-left:3px solid var(--sage);padding:1.2rem 1.5rem;margin:2rem 0;font-style:italic;font-size:1.06rem;color:rgba(237,243,238,.85);background:var(--sage-glow);line-height:1.6;}
+.s-aside{display:flex;flex-direction:column;gap:1.3rem;position:sticky;top:110px;}
+.sc{background:var(--card);border:1px solid var(--border);padding:1.6rem;}
+.sc .big{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--sage);line-height:1;}
+.sc .lbl{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-top:.3rem;}
+.press{border-top:1px solid var(--border);padding-top:1.1rem;font-family:'Barlow Condensed',sans-serif;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+.press-row{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.6rem;font-family:'Barlow Condensed',sans-serif;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(237,243,238,.28);}
 
-.pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 36px;
-}
-.pill {
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 7px 16px;
-  border: 1px solid var(--border);
-  color: var(--muted);
-  background: var(--card);
-}
-.pill.active { border-color: var(--accent); color: var(--accent); }
+/* PROCESS */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem;margin-top:3.5rem;}
+@media(max-width:800px){.steps{grid-template-columns:1fr;}}
+.step{border-top:2px solid var(--border);padding-top:2rem;}
+.step-n{font-family:'Bebas Neue',sans-serif;font-size:4rem;color:rgba(122,157,125,.1);line-height:1;margin-bottom:.8rem;}
+.step h3{font-family:'Barlow Condensed',sans-serif;font-size:1.12rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--white);margin-bottom:.7rem;}
+.step p{color:rgba(237,243,238,.55);font-size:.94rem;line-height:1.65;}
 
-/* Accomplishment grid */
-.accom-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border: 1px solid var(--border);
-  margin: 36px 0;
-}
-.accom {
-  padding: 24px 20px;
-  border-right: 1px solid var(--border);
-  background: var(--card);
-}
-.accom:last-child { border-right: none; }
-.accom-n {
-  font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
-  font-size: 40px;
-  color: var(--accent);
-  line-height: 1;
-}
-.accom-l {
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-top: 4px;
-}
+/* PRICING */
+.p-intro{color:rgba(237,243,238,.5);font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;letter-spacing:.05em;margin-bottom:3rem;}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+@media(max-width:800px){.plans{grid-template-columns:1fr;}}
+.plan{background:var(--card);border:1px solid var(--border);padding:2.4rem;position:relative;transition:border-color .3s;}
+.plan:hover{border-color:var(--sage-dim);}
+.p-badge{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;background:var(--sage);color:var(--black);padding:4px 11px;margin-bottom:1.3rem;font-weight:700;}
+.p-lvl{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);margin-bottom:.32rem;}
+.plan h3{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.05em;color:var(--white);margin-bottom:.8rem;}
+.p-desc{color:rgba(237,243,238,.52);font-size:.9rem;margin-bottom:1.3rem;line-height:1.55;}
+.p-price{display:flex;align-items:baseline;gap:.22rem;margin-bottom:1.3rem;}
+.p-price .amt{font-family:'Bebas Neue',sans-serif;font-size:3.2rem;color:var(--sage);line-height:1;}
+.p-price .per{font-size:.8rem;color:var(--muted);font-family:'Barlow Condensed',sans-serif;letter-spacing:.1em;text-transform:uppercase;}
+.p-div{width:100%;height:1px;background:var(--border);margin-bottom:1.3rem;}
+.p-feats{list-style:none;margin-bottom:1.7rem;display:flex;flex-direction:column;gap:.75rem;}
+.p-feats li{display:flex;gap:.72rem;align-items:flex-start;font-size:.89rem;color:rgba(237,243,238,.68);}
+.p-feats li::before{content:'\2014';color:var(--sage);flex-shrink:0;margin-top:1px;}
+.p-feats li strong{color:var(--white);font-weight:500;}
+.plan .btn-p{width:100%;text-align:center;display:block;}
+.p-note{margin-top:.9rem;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);}
 
-/* Press strip */
-.press-strip {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 20px 0;
-  margin-bottom: 32px;
-}
-.press-label {
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--gray);
-  margin-bottom: 14px;
-}
-.press-logos {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px 18px;
-}
-.press-item {
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.press-div {
-  color: var(--border);
-  font-size: 18px;
-}
+/* STAKES */
+.stakes{background:var(--sage);color:var(--black);text-align:center;padding:80px 5vw;}
+.stakes .eyebrow{color:rgba(8,11,9,.5);}
+.stakes h2{color:var(--black);font-size:clamp(2.4rem,5.5vw,4.6rem);margin-bottom:1rem;}
+.stakes p{font-size:1.04rem;color:rgba(8,11,9,.65);margin-bottom:2.4rem;max-width:580px;margin-left:auto;margin-right:auto;line-height:1.68;}
+.stakes-sub{margin-top:1.1rem;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(8,11,9,.42);font-family:'Barlow Condensed',sans-serif;max-width:440px;margin-left:auto;margin-right:auto;}
 
-/* ================================================================
-   HOW IT WORKS
-================================================================ */
-#how {
-  padding: 100px 48px;
-  background: var(--deep);
-  border-top: 1px solid var(--border);
-}
-.how-inner {
-  max-width: 900px;
-  margin: 0 auto;
-}
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  margin-top: 52px;
-}
-.step-item {
-  padding: 36px 28px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  position: relative;
-  transition: border-color 0.3s;
-}
-.step-item:hover { border-color: var(--accent); }
-.step-num {
-  font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
-  font-size: 56px;
-  line-height: 1;
-  color: var(--border);
-  margin-bottom: 16px;
-  transition: color 0.3s;
-}
-.step-item:hover .step-num { color: var(--accent); }
-.step-title {
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--white);
-  margin-bottom: 12px;
-  line-height: 1.2;
-}
-.step-desc {
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.75;
-  color: var(--muted);
-  margin: 0;
-}
+/* FOOTER */
+footer{background:var(--off-black);border-top:1px solid var(--border);padding:60px 5vw 40px;}
+.f-inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;}
+@media(max-width:700px){.f-inner{grid-template-columns:1fr;gap:2rem;}}
+.f-brand .logo{font-size:1.35rem;display:inline-block;margin-bottom:.85rem;}
+.f-brand p{font-size:.86rem;color:var(--muted);max-width:275px;line-height:1.6;}
+.f-col h4{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);margin-bottom:1.1rem;}
+.f-col a{display:block;font-size:.86rem;color:var(--muted);text-decoration:none;margin-bottom:.5rem;transition:color .2s;}
+.f-col a:hover{color:var(--white);}
+.f-bottom{margin-top:3rem;padding-top:1.3rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:.74rem;color:var(--muted);font-family:'Barlow Condensed',sans-serif;letter-spacing:.1em;text-transform:uppercase;}
+.f-bottom a{color:var(--muted);text-decoration:none;}
+.f-bottom a:hover{color:var(--white);}
+.f-legal{display:flex;gap:2rem;}
 
-/* ================================================================
-   COACHING
-================================================================ */
-#coaching {
-  padding: 100px 48px;
-  border-top: 1px solid var(--border);
-}
-.coaching-inner { max-width: 1100px; margin: 0 auto; }
+@keyframes fu{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+</style>
 
-.coaching-header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: end;
-  margin-bottom: 60px;
-}
-.coaching-desc {
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.8;
-  color: var(--muted);
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3px;
-  max-width: 840px;
-  margin: 0 auto;
-}
-
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  padding: 44px 36px;
-  position: relative;
-  transition: border-color 0.3s, transform 0.3s;
-}
-.card:hover { border-color: var(--accent); transform: translateY(-4px); }
-.card.featured {
-  border-color: var(--accent);
-  background: linear-gradient(160deg, #0b170b 0%, #141414 100%);
-}
-
-.card-badge {
-  position: absolute;
-  top: -1px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--accent);
-  color: #000;
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 5px 18px;
-  white-space: nowrap;
-}
-.card-level {
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 8px;
-}
-.card-name {
-  font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
-  font-size: 36px;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
-}
-.card-price {
-  display: flex;
-  align-items: baseline;
-  gap: 4px;
-  margin-bottom: 14px;
-}
-.card-price-n {
-  font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
-  font-size: 48px;
-  color: var(--white);
-  line-height: 1;
-}
-.card-price-suffix {
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.card-desc {
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.6;
-  color: var(--muted);
-  margin-bottom: 28px;
-}
-.features {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 32px;
-}
-.feature {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.45;
-}
-.feature strong { color: var(--white); font-weight: 500; }
-.tick {
-  flex-shrink: 0;
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
-  border: 1.5px solid var(--accent);
-  background: rgba(74,122,72,0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 9px;
-  color: var(--accent);
-  margin-top: 2px;
-}
-.card-limit {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--red);
-  margin-bottom: 20px;
-}
-.rdot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); flex-shrink: 0; }
-
-.card-btn {
-  display: block;
-  width: 100%;
-  text-align: center;
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 14px;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s, border-color 0.2s, color 0.2s;
-}
-.card-btn.solid { background: var(--accent); color: #000; }
-.card-btn.solid:hover { background: var(--accent-lt); }
-.card-btn.outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.2); }
-.card-btn.outline:hover { border-color: var(--accent); color: var(--accent); }
-
-/* ================================================================
-   CTA
-================================================================ */
-#cta {
-  padding: 120px 48px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  border-top: 1px solid var(--border);
-  background: var(--deep);
-}
-.cta-glow {
-  position: absolute;
-  left: 50%; top: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px; height: 400px;
-  background: radial-gradient(ellipse, rgba(74,122,72,0.09) 0%, transparent 70%);
-  pointer-events: none;
-}
-.cta-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 660px;
-  margin: 0 auto;
-}
-.cta-eyebrow { justify-content: center; }
-.cta-h2 {
-  font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
-  font-size: clamp(60px, 9vw, 110px);
-  line-height: 0.9;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-}
-.cta-h2 .g { color: var(--accent); }
-.cta-sub {
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 1.7;
-  color: var(--muted);
-  margin-bottom: 42px;
-}
-.cta-btn {
-  font-size: 15px;
-  padding: 18px 48px;
-}
-.pulse-row {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 22px;
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--red);
-}
-.pdot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: var(--red);
-  animation: blink 1.6s ease-in-out infinite;
-}
-@keyframes blink {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.3; transform: scale(1.5); }
-}
-
-/* ================================================================
-   FOOTER
-================================================================ */
-footer {
-  background: #050505;
-  border-top: 1px solid var(--border);
-  padding: 56px 48px 36px;
-}
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 52px;
-  padding-bottom: 44px;
-  border-bottom: 1px solid var(--border);
-}
-.footer-logo {
-  font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
-  font-size: 22px;
-  letter-spacing: 5px;
-  margin-bottom: 12px;
-}
-.footer-logo span { color: var(--accent); }
-.footer-tagline {
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.7;
-  color: var(--muted);
-  max-width: 240px;
-  margin-bottom: 24px;
-}
-.socials { display: flex; gap: 10px; }
-.soc {
-  width: 36px; height: 36px;
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-  color: var(--muted);
-  transition: border-color 0.2s, color 0.2s;
-}
-.soc:hover { border-color: var(--accent); color: var(--accent); }
-
-.footer-col-title {
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 16px;
-}
-.footer-links { display: flex; flex-direction: column; gap: 10px; }
-.footer-links a {
-  font-size: 14px;
-  font-weight: 300;
-  color: var(--muted);
-  transition: color 0.2s;
-}
-.footer-links a:hover { color: var(--white); }
-
-.footer-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 28px;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-.footer-copy { font-size: 12px; color: var(--gray); }
-.footer-legal { display: flex; gap: 20px; }
-.footer-legal a { font-size: 12px; color: var(--gray); transition: color 0.2s; }
-.footer-legal a:hover { color: var(--muted); }
-
-/* ================================================================
-   MODAL
-================================================================ */
-#modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 900;
-  background: rgba(4,4,4,0.96);
-  backdrop-filter: blur(18px);
-  overflow-y: auto;
-}
-#modal.open {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 24px;
-}
-
-.modal-box {
-  width: 100%;
-  max-width: 530px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  padding: 52px 44px;
-  position: relative;
-}
-.modal-close {
-  position: absolute;
-  top: 16px; right: 16px;
-  width: 34px; height: 34px;
-  background: none;
-  border: 1px solid var(--border);
-  color: var(--muted);
-  font-size: 14px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: border-color 0.2s, color 0.2s;
-}
-.modal-close:hover { border-color: var(--accent); color: var(--accent); }
-
-.modal-tag {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 12px;
-}
-.modal-tag::before { content: ''; display: block; width: 22px; height: 2px; background: var(--accent); flex-shrink: 0; }
-
-.modal-h2 {
-  font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
-  font-size: 46px;
-  line-height: 0.93;
-  margin-bottom: 10px;
-}
-.modal-h2 .g { color: var(--accent); }
-
-.modal-sub {
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.65;
-  color: var(--muted);
-  margin-bottom: 24px;
-}
-
-.expect-box {
-  background: var(--deep);
-  border-left: 3px solid var(--accent);
-  padding: 14px 18px;
-  margin-bottom: 26px;
-}
-.expect-label {
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 8px;
-}
-.expect-items {
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 1.9;
-  color: var(--muted);
-}
-
-.field { margin-bottom: 14px; }
-.field label {
-  display: block;
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 6px;
-}
-.field input,
-.field select {
-  width: 100%;
-  background: var(--deep);
-  border: 1px solid var(--border);
-  color: var(--white);
-  font-family: 'Barlow', 'Helvetica Neue', Arial, sans-serif;
-  font-size: 15px;
-  padding: 13px 15px;
-  outline: none;
-  transition: border-color 0.2s;
-  appearance: none;
-  -webkit-appearance: none;
-}
-.field input::placeholder { color: var(--gray); }
-.field input:focus,
-.field select:focus { border-color: var(--accent); }
-.field select option { background: #141414; }
-
-.form-error {
-  display: none;
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 12px;
-  letter-spacing: 1px;
-  color: var(--red);
-  margin-bottom: 12px;
-}
-.form-submit {
-  width: 100%;
-  background: var(--accent);
-  color: #000;
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  padding: 16px;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s;
-  margin-top: 6px;
-}
-.form-submit:hover { background: var(--accent-lt); }
-.form-submit:disabled { opacity: 0.5; cursor: not-allowed; }
-
-.form-note {
-  font-size: 11px;
-  color: var(--muted);
-  text-align: center;
-  margin-top: 12px;
-  line-height: 1.6;
-}
-
-.modal-success {
-  display: none;
-  text-align: center;
-  padding: 28px 0;
-}
-.success-icon { font-size: 44px; margin-bottom: 14px; }
-.success-h3 {
-  font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
-  font-size: 44px;
-  line-height: 1;
-  margin-bottom: 12px;
-}
-.success-h3 .g { color: var(--accent); }
-.success-p {
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.7;
-  color: var(--muted);
-  margin-bottom: 26px;
-}
-
-/* ================================================================
-   RESPONSIVE
-================================================================ */
-@media (max-width: 900px) {
-  header { padding: 0 24px; }
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  .nav-links.open {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 66px; left: 0; right: 0;
-    background: rgba(9,9,9,0.99);
-    border-bottom: 1px solid var(--border);
-    padding: 24px 24px 28px;
-    gap: 20px;
-    align-items: flex-start;
-    z-index: 400;
-  }
-  .nav-links.open .nav-cta { width: 100%; text-align: center; display: block; }
-
-  #hero { padding: 88px 24px 60px; }
-  .hero-h1 { font-size: 64px; }
-  .hero-sub { font-size: 16px; max-width: 100%; }
-  .stats { grid-template-columns: 1fr 1fr; margin-top: 48px; padding-top: 30px; gap: 24px 0; }
-  .stat { border-right: none; padding-right: 0; margin-right: 0; }
-
-  #about { padding: 72px 24px; }
-  .about-inner { max-width: 100%; }
-  .accom-grid { grid-template-columns: 1fr 1fr; }
-  .accom { border-bottom: 1px solid var(--border); }
-  .accom:nth-child(2) { border-right: none; }
-  .accom:nth-child(3), .accom:nth-child(4) { border-bottom: none; }
-  .accom:nth-child(4) { border-right: none; }
-  .press-logos { gap: 8px 12px; }
-
-  #how { padding: 72px 24px; }
-  .steps { grid-template-columns: 1fr; }
-
-  #coaching { padding: 72px 24px; }
-  .coaching-header { grid-template-columns: 1fr; gap: 16px; }
-  .cards { grid-template-columns: 1fr; max-width: 460px; }
-
-  #cta { padding: 80px 24px; }
-  .cta-h2 { font-size: 56px; }
-
-  footer { padding: 48px 24px 28px; }
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; }
-
-  .modal-box { padding: 40px 24px; }
-  .modal-h2 { font-size: 38px; }
-}
-
-@media (max-width: 480px) {
-  .hero-h1 { font-size: 52px; }
-  .hero-btns { flex-direction: column; }
-  .hero-btns .btn { width: 100%; justify-content: center; }
-  .stats { grid-template-columns: 1fr 1fr; }
-}
-```
-
-  </style>
 </head>
 <body>
 
-  <!-- ============================================================
-       HEADER
-  ============================================================ -->
+<nav id="nav"></nav>
+<section class="hero" id="hero"></section>
+<section id="problem" class="bg-off"></section>
+<section id="about"></section>
+<section id="process" class="bg-off"></section>
+<section id="coaching"></section>
+<div id="stakes-wrap"></div>
+<footer id="foot"></footer>
 
-  <header>
-    <a href="#" class="logo">FITTER <span>FATHERS</span></a>
+<script>
+// ════════════════════════════════════════════════════════════════
+// RENDERER — builds page from COPY object. Do not edit for copy.
+// ════════════════════════════════════════════════════════════════
+const EU = COPY.everfitURL;
 
-```
-<nav class="nav-links" id="navLinks" aria-label="Main navigation">
-  <a href="#about">About</a>
-  <a href="#coaching">Coaching</a>
-  <a href="https://www.instagram.com/fitterfathers" target="_blank" rel="noopener noreferrer" class="ig">@fitterfathers</a>
-  <button class="nav-cta" onclick="openModal()">Book a Call</button>
-</nav>
+function hl(lines, ai) {
+  return lines.map((l,i) => i===ai ? `<span class="ac">${l}</span>` : l).join('<br>');
+}
+function fi(f) {
+  return `<li>${f.bold ? `<strong>${f.bold}</strong>${f.rest}` : f.rest}</li>`;
+}
+function extA(href) {
+  return href.startsWith('http') || href.startsWith('mailto') ? ' target="_blank"' : '';
+}
 
-<button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
-```
+// NAV
+const N = COPY.nav;
+document.getElementById('nav').innerHTML =
+  `<a href="#" class="logo">${COPY.brand}</a>
+   <div class="nav-links">
+     ${N.links.map((l,i)=>`<a href="${N.linkHrefs[i]}" class="nav-a"${extA(N.linkHrefs[i])}>${l}</a>`).join('')}
+     <a href="${EU}" target="_blank" class="nav-cta">${N.ctaLabel}</a>
+   </div>`;
 
-  </header>
+// HERO
+const H = COPY.hero;
+document.getElementById('hero').innerHTML =
+  `<div class="eyebrow h-eye">${H.eyebrow}</div>
+   <div class="h-rule"></div>
+   <h1>${hl(H.headline, H.accentLine)}</h1>
+   <p class="h-sub">${H.subhead}</p>
+   <div class="h-actions">
+     <a href="${EU}" target="_blank" class="btn-p">${H.ctaPrimary}</a>
+     <a href="${H.ctaSecondaryHref}" class="btn-ghost">${H.ctaSecondary}</a>
+   </div>
+   <div class="h-stats">
+     ${H.stats.map(s=>`<div><div class="snum">${s.num}</div><div class="slbl">${s.label}</div></div>`).join('')}
+   </div>`;
 
-  <!-- ============================================================
-       HERO
-  ============================================================ -->
+// PROBLEM
+const PR = COPY.problem;
+const c = PR.callout;
+document.getElementById('problem').innerHTML =
+  `<div class="eyebrow">${PR.eyebrow}</div>
+   <div class="sage-line"></div>
+   <h2>${hl(PR.headline, PR.accentLine)}</h2>
+   <div class="prob-grid">
+     <div>${PR.body.map(b=>`<p class="body-p">${b}</p>`).join('')}</div>
+     <div class="callout-box">${c[0]}<span class="ac">${c[1]}</span>${c[2]}<span class="ac">${c[3]}</span>${c[4]}</div>
+   </div>`;
 
-  <section id="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="hero-grid" aria-hidden="true"></div>
+// STORY
+const S = COPY.story;
+document.getElementById('about').innerHTML =
+  `<div class="story-grid">
+     <div>
+       <div class="eyebrow">${S.eyebrow}</div>
+       <div class="sage-line"></div>
+       <h2>${hl(S.headline, S.accentLine)}</h2>
+       ${S.body.map(b=>`<p class="body-p">${b}</p>`).join('')}
+       <div class="s-quote">"${S.quote}"</div>
+       <a href="${EU}" target="_blank" class="btn-p">${S.ctaLabel}</a>
+     </div>
+     <div class="s-aside">
+       ${S.stats.map(s=>`<div class="sc"><div class="big">${s.num}</div><div class="lbl">${s.label}</div></div>`).join('')}
+       <div class="press">${S.pressLabel}
+         <div class="press-row">
+           ${S.press.map((p,i)=>`<span>${p}</span>${i<S.press.length-1?'<span>·</span>':''}`).join('')}
+         </div>
+       </div>
+     </div>
+   </div>`;
 
-```
-<div class="hero-content reveal">
-  <p class="hero-eyebrow">For the Father Who Knows He Has More to Give</p>
-  <h1 class="hero-h1">
-    BUILD THE<br>
-    <span class="stroke">HABITS.</span><br>
-    <span class="g">CHANGE</span><br>
-    YOUR LIFE.
-  </h1>
-  <p class="hero-sub">
-    You show up for everyone else. Your job. Your family. Your responsibilities. But somewhere along the way, you stopped showing up for yourself. I know that feeling — and I know exactly how to fix it.
-  </p>
-  <div class="hero-btns">
-    <button class="btn btn-green" onclick="openModal()">→ Book a Free Consultation</button>
-    <a href="#coaching" class="btn btn-ghost">See Coaching Levels</a>
-  </div>
-</div>
+// PROCESS
+const PL = COPY.process;
+document.getElementById('process').innerHTML =
+  `<div class="eyebrow">${PL.eyebrow}</div>
+   <div class="sage-line"></div>
+   <h2>${hl(PL.headline, PL.accentLine)}</h2>
+   <div class="steps">
+     ${PL.steps.map(st=>`
+       <div class="step">
+         <div class="step-n">${st.num}</div>
+         <h3>${st.title}</h3>
+         <p>${st.body}</p>
+       </div>`).join('')}
+   </div>`;
 
-<div class="stats reveal">
-  <div class="stat">
-    <div class="stat-n">20+</div>
-    <div class="stat-l">Years in Recovery</div>
-  </div>
-  <div class="stat">
-    <div class="stat-n">500+</div>
-    <div class="stat-l">Lives Transformed</div>
-  </div>
-  <div class="stat">
-    <div class="stat-n">2</div>
-    <div class="stat-l">Coaching Levels</div>
-  </div>
-  <div class="stat">
-    <div class="stat-n">Limited</div>
-    <div class="stat-l">Spots Available</div>
-  </div>
-</div>
-```
+// PRICING
+const PC = COPY.pricing;
+document.getElementById('coaching').innerHTML =
+  `<div class="eyebrow">${PC.eyebrow}</div>
+   <div class="sage-line"></div>
+   <h2>${hl(PC.headline, PC.accentLine)}</h2>
+   <p class="p-intro">${PC.intro}</p>
+   <div class="plans">
+     ${PC.plans.map(pl=>`
+       <div class="plan">
+         ${pl.badge ? `<div class="p-badge">${pl.badge}</div>` : ''}
+         <div class="p-lvl">${pl.level}</div>
+         <h3>${pl.name}</h3>
+         <p class="p-desc">${pl.description}</p>
+         <div class="p-price"><span class="amt">${pl.price}</span><span class="per">${pl.period}</span></div>
+         <div class="p-div"></div>
+         <ul class="p-feats">${pl.features.map(fi).join('')}</ul>
+         <a href="${EU}" target="_blank" class="btn-p">${pl.ctaLabel}</a>
+         ${pl.note ? `<div class="p-note">${pl.note}</div>` : ''}
+       </div>`).join('')}
+   </div>`;
 
-  </section>
+// STAKES
+const ST = COPY.stakes;
+document.getElementById('stakes-wrap').innerHTML =
+  `<div class="stakes">
+     <div class="eyebrow">${ST.eyebrow}</div>
+     <h2>${ST.headline}</h2>
+     <p>${ST.body}</p>
+     <a href="${EU}" target="_blank" class="btn-dk">${ST.ctaLabel}</a>
+     <div class="stakes-sub">${ST.sub}</div>
+   </div>`;
 
-  <!-- ============================================================
-       ABOUT
-  ============================================================ -->
-
-  <section id="about">
-    <div class="about-inner reveal">
-      <p class="eyebrow">The Story Behind the Coach</p>
-      <h2 class="section-title">BAD HABITS<br>ALMOST <span class="g">KILLED ME.</span></h2>
-
-```
-  <p>
-    From 13 to 23, I was a full-blown addict. Drugs. Alcohol. A decade of bad decisions that nearly cost me everything. I wasn't just struggling — I was lost. And I had no idea how to find my way back.
-  </p>
-  <p>
-    Getting sober didn't hand me a perfect life. It handed me something better: <strong>a system.</strong> Faith. Muay Thai. Nutrition. Structure. A plan I followed like my life depended on it — because it did. That system became the foundation of everything I've built since.
-  </p>
-  <p>
-    The Meatball Shop. Seamore's. Kreatures of Habit. Competing as an athlete. Becoming the husband and father I wanted to be. <strong>Not one day of that happened without the habits I protect every single morning.</strong>
-  </p>
-
-  <blockquote class="pull-quote">
-    "Bad habits almost killed me — and great habits have made me the man I am today. That's why I coach."
-  </blockquote>
-
-  <p>
-    Here's what I've learned from coaching hundreds of men: <strong>you already have everything you need.</strong> The drive is there. The love for your family is there. What's missing is a proven system, a clear plan, and someone who's walked the road ahead of you holding you accountable to who you said you wanted to be.
-  </p>
-  <p>
-    That's what Fitter Fathers is. Not a program. <strong>A proven system built on the habits that changed my life — now built around yours.</strong>
-  </p>
-
-  <div class="accom-grid">
-    <div class="accom">
-      <div class="accom-n">20+</div>
-      <div class="accom-l">Years Sober</div>
-    </div>
-    <div class="accom">
-      <div class="accom-n">500+</div>
-      <div class="accom-l">Men Coached</div>
-    </div>
-    <div class="accom">
-      <div class="accom-n">3+</div>
-      <div class="accom-l">Businesses Built</div>
-    </div>
-    <div class="accom">
-      <div class="accom-n">Top 10</div>
-      <div class="accom-l">Health Podcast</div>
-    </div>
-  </div>
-
-  <div class="press-strip">
-    <p class="press-label">As Seen In</p>
-    <div class="press-logos">
-      <span class="press-item">Good Morning America</span>
-      <span class="press-div" aria-hidden="true">·</span>
-      <span class="press-item">Men's Health</span>
-      <span class="press-div" aria-hidden="true">·</span>
-      <span class="press-item">GQ</span>
-      <span class="press-div" aria-hidden="true">·</span>
-      <span class="press-item">Entrepreneur</span>
-      <span class="press-div" aria-hidden="true">·</span>
-      <span class="press-item">Mind Pump</span>
-      <span class="press-div" aria-hidden="true">·</span>
-      <span class="press-item">Today Show</span>
-    </div>
-  </div>
-
-  <button class="btn btn-green" onclick="openModal()">&#8594; Work With Me</button>
-</div>
-```
-
-  </section>
-
-  <!-- ============================================================
-       HOW IT WORKS — StoryBrand Plan
-  ============================================================ -->
-
-  <section id="how">
-    <div class="how-inner reveal">
-      <p class="eyebrow">The Process</p>
-      <h2 class="section-title">THREE STEPS.<br><span class="g">ONE MISSION.</span></h2>
-      <div class="steps">
-        <div class="step-item">
-          <div class="step-num">01</div>
-          <h3 class="step-title">Book Your Free Call</h3>
-          <p class="step-desc">We get on a call. You tell me where you are. I tell you exactly what it's going to take. No pressure — just clarity.</p>
-        </div>
-        <div class="step-item">
-          <div class="step-num">02</div>
-          <h3 class="step-title">Get Your Custom Plan</h3>
-          <p class="step-desc">I build a program around your life — your schedule, your body, your goals. Not a template. A system designed for you.</p>
-        </div>
-        <div class="step-item">
-          <div class="step-num">03</div>
-          <h3 class="step-title">Become the Man You Said You Would</h3>
-          <p class="step-desc">You execute. I hold you accountable. Week by week, habit by habit — you become stronger, sharper, and more present for the people who need you most.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       COACHING
-  ============================================================ -->
-
-  <section id="coaching">
-    <div class="coaching-inner">
-      <div class="coaching-header reveal">
-        <div>
-          <p class="eyebrow">Coaching Programs</p>
-          <h2 class="section-title">CHOOSE YOUR<br><span class="g">LEVEL.</span></h2>
-        </div>
-        <p class="coaching-desc">
-          Two levels. One mission. Start with the system, or go all in with me personally. Either way — the work begins the moment you decide.
-        </p>
-      </div>
-
-```
-  <div class="cards reveal">
-
-    <!-- Card: Level 1 -->
-    <div class="card">
-      <p class="card-level">Level 01</p>
-      <h3 class="card-name">The Foundation</h3>
-      <div class="card-price">
-        <span class="card-price-n">$25</span>
-        <span class="card-price-suffix">/ month</span>
-      </div>
-      <p class="card-desc">Start here. Build the habits, lock in the routine, and prove to yourself what's possible when you commit to the process.</p>
-      <ul class="features">
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>4–6 week training program</strong> — structured, progressive, built to move</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Access to my full Fitness Program Library</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Nutrition Library &amp; guidance</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Weekly morning routine emails — the habits that set the tone</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Bi-weekly community calls — accountability &amp; real talk</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Weekly automated check-ins to keep you honest</li>
-      </ul>
-      <button class="card-btn outline" onclick="openModal()">Get Started →</button>
-    </div>
-
-    <!-- Card: Level 2 -->
-    <div class="card featured">
-      <div class="card-badge">Ultimate Experience</div>
-      <p class="card-level">Level 02</p>
-      <h3 class="card-name">All In</h3>
-      <div class="card-price">
-        <span class="card-price-n">$200</span>
-        <span class="card-price-suffix">/ month</span>
-      </div>
-      <p class="card-desc">This is me, fully invested in you. Your training. Your food. Your mornings. I built this level for the father who's done halfway — and ready to go all in.</p>
-      <ul class="features">
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Everything in Level 1</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>Custom 12-week training program</strong> — written for your body, your schedule, your life</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>Personalized nutrition coaching</strong> — I'll show you exactly what to eat, when, and why. Real food. Real results.</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>Weekly morning routine emails</strong> — the habits I live by, straight to your inbox every week</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>Weekly 1-on-1 check-ins with me</strong> — we talk, we adjust, we keep moving forward</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>Direct access to me</strong> via video, audio or message — when you need me, I'm there</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span><strong>Weekly live community calls</strong> — real men, real accountability, real wins</li>
-        <li class="feature"><span class="tick" aria-hidden="true">✓</span>Mindset &amp; relationship development</li>
-      </ul>
-      <p class="card-limit"><span class="rdot" aria-hidden="true"></span>Limited spots — apply to be considered</p>
-      <button class="card-btn solid" onclick="openModal()">Book a Discovery Call →</button>
-    </div>
-
-  </div>
-</div>
-```
-
-  </section>
-
-  <!-- ============================================================
-       CTA
-  ============================================================ -->
-
-  <section id="cta">
-    <div class="cta-glow" aria-hidden="true"></div>
-    <div class="cta-inner reveal">
-      <p class="eyebrow cta-eyebrow">The Decision Is Yours</p>
-      <h2 class="cta-h2">READY TO<br>CHANGE<br><span class="g">YOUR LIFE?</span></h2>
-      <p class="cta-sub">
-        A year from now you'll either be stronger, leaner, and more locked in than you've ever been — or you'll be exactly where you are right now. The only difference is what you decide today.
-      </p>
-      <button class="btn btn-green cta-btn" onclick="openModal()">
-        → Book Your Free Discovery Call
-      </button>
-      <p class="pulse-row">
-        <span class="pdot" aria-hidden="true"></span>
-        Limited spots available this month
-      </p>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
-
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <p class="footer-logo">FITTER <span>FATHERS</span></p>
-        <p class="footer-tagline">Coaching fathers through real transformation — one habit at a time.</p>
-        <div class="socials">
-          <a href="https://www.instagram.com/fitterfathers" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Instagram">📷</a>
-          <a href="#" class="soc" aria-label="Facebook">👥</a>
-          <a href="#" class="soc" aria-label="YouTube">▶️</a>
-        </div>
-      </div>
-      <div>
-        <p class="footer-col-title">Coaching</p>
-        <ul class="footer-links">
-          <li><a href="#coaching">Level 1 — The Foundation</a></li>
-          <li><a href="#coaching">Level 2 — All In</a></li>
-          <li><a href="#" onclick="openModal();return false;">Book a Discovery Call</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-col-title">Connect</p>
-        <ul class="footer-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="https://www.instagram.com/fitterfathers" target="_blank" rel="noopener noreferrer">@fitterfathers</a></li>
-          <li><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#102;&#111;&#64;&#116;&#104;&#101;&#102;&#105;&#116;&#116;&#101;&#114;&#102;&#97;&#116;&#104;&#101;&#114;&#115;&#46;&#99;&#111;&#109;">Contact Us</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span class="footer-copy">&#169; 2025 Fitter Fathers. All rights reserved.</span>
-      <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms &amp; Conditions</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ============================================================
-       MODAL — Discovery Call
-  ============================================================ -->
-
-  <div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal-box">
-      <button class="modal-close" onclick="closeModal()" aria-label="Close">&#x2715;</button>
-
-```
-  <!-- Success State -->
-  <div class="modal-success" id="modalSuccess">
-    <div class="success-icon">&#x2705;</div>
-    <h3 class="success-h3">YOU&#39;RE ON<br><span class="g">THE LIST.</span></h3>
-    <p class="success-p">We received your info and will be in touch within 24 hours to schedule your free discovery call. This is where it starts.</p>
-    <button class="btn btn-green" onclick="closeModal()">&#8592; Back to Site</button>
-  </div>
-
-  <!-- Form State -->
-  <div id="modalForm">
-    <p class="modal-tag">Free Discovery Call</p>
-    <h2 class="modal-h2" id="modal-title">BOOK YOUR<br><span class="g">CALL.</span></h2>
-    <p class="modal-sub">Fill in your details and we&#39;ll reach out within 24 hours to lock in your free 20-minute session.</p>
-
-    <div class="expect-box">
-      <p class="expect-label">What to expect</p>
-      <div class="expect-items">
-        &#x2726; 20-minute free call, personally with me<br>
-        &#x2726; We&#39;ll assess your goals &amp; lifestyle<br>
-        &#x2726; I&#39;ll recommend the right coaching level<br>
-        &#x2726; Zero obligation &#8212; just clarity
-      </div>
-    </div>
-
-    <div class="field">
-      <label for="fname">Full Name &#42;</label>
-      <input type="text" id="fname" name="name" placeholder="Your full name" autocomplete="name" required>
-    </div>
-    <div class="field">
-      <label for="femail">Email Address &#42;</label>
-      <input type="email" id="femail" name="email" placeholder="your@email.com" autocomplete="email" required>
-    </div>
-    <div class="field">
-      <label for="flevel">Which level interests you?</label>
-      <select id="flevel" name="level">
-        <option value="">Not sure yet</option>
-        <option value="Level 1 - The Foundation - $25/mo">Level 1 &#8212; The Foundation ($25/mo)</option>
-        <option value="Level 2 - All In - $200/mo">Level 2 &#8212; All In ($200/mo)</option>
-      </select>
-    </div>
-
-    <div class="form-error" id="formError" role="alert"></div>
-
-    <button class="form-submit" id="formSubmit" onclick="submitForm()">
-      &#8594; Send My Info &amp; Book My Call
-    </button>
-    <p class="form-note">Your info is sent directly to us &nbsp;&#183;&nbsp; We never share your data.</p>
-  </div>
-</div>
-```
-
-  </div>
-
-  <!-- ============================================================
-       SCRIPTS
-  ============================================================ -->
-
-  <script>
-    /* ── Scroll Reveal ── */
-    (function () {
-      var els = document.querySelectorAll('.reveal');
-      var io  = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry, i) {
-          if (entry.isIntersecting) {
-            setTimeout(function () { entry.target.classList.add('in'); }, i * 100);
-            io.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      els.forEach(function (el) { io.observe(el); });
-    })();
-
-    /* ── Mobile Nav ── */
-    var hamburger = document.getElementById('hamburger');
-    var navLinks  = document.getElementById('navLinks');
-
-    hamburger.addEventListener('click', function () {
-      var isOpen = navLinks.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', String(isOpen));
-    });
-    navLinks.querySelectorAll('a, button').forEach(function (el) {
-      el.addEventListener('click', function () {
-        navLinks.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    /* ── Modal ── */
-    var modal = document.getElementById('modal');
-
-    function openModal() {
-      modal.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      document.getElementById('modalSuccess').style.display = 'none';
-      document.getElementById('modalForm').style.display    = 'block';
-      document.getElementById('formError').style.display    = 'none';
-      document.getElementById('fname').value  = '';
-      document.getElementById('femail').value = '';
-      document.getElementById('flevel').value = '';
-      setTimeout(function () { document.getElementById('fname').focus(); }, 100);
-    }
-
-    function closeModal() {
-      modal.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    modal.addEventListener('click', function (e) {
-      if (e.target === modal) closeModal();
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
-    });
-
-    /* ── Form Submission ── */
-    async function submitForm() {
-      var name  = document.getElementById('fname').value.trim();
-      var email = document.getElementById('femail').value.trim();
-      var level = document.getElementById('flevel').value;
-      var errEl = document.getElementById('formError');
-      var btn   = document.getElementById('formSubmit');
-
-      errEl.style.display = 'none';
-
-      if (!name) {
-        errEl.textContent   = '\u26A0 Please enter your full name.';
-        errEl.style.display = 'block';
-        document.getElementById('fname').focus();
-        return;
-      }
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        errEl.textContent   = '\u26A0 Please enter a valid email address.';
-        errEl.style.display = 'block';
-        document.getElementById('femail').focus();
-        return;
-      }
-
-      btn.disabled    = true;
-      btn.textContent = 'Sending\u2026';
-
-      try {
-        /* ─────────────────────────────────────────────────────────
-           REPLACE  YOUR_FORM_ID  with your Formspree form ID.
-           Get one free at https://formspree.io
-        ───────────────────────────────────────────────────────── */
-        var res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-          method:  'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({
-            name:     name,
-            email:    email,
-            level:    level || 'Not specified',
-            _replyto: email,
-            _subject: 'New Discovery Call \u2014 ' + name
-          })
-        });
-        if (res.ok) {
-          showSuccess();
-        } else {
-          openMailto(name, email, level);
-          showSuccess();
-        }
-      } catch (err) {
-        openMailto(name, email, level);
-        showSuccess();
-      }
-
-      btn.disabled    = false;
-      btn.textContent = '\u2192 Send My Info & Book My Call';
-    }
-
-    function openMailto(name, email, level) {
-      var s = encodeURIComponent('New Discovery Call \u2014 ' + name);
-      var b = encodeURIComponent(
-        'Name: '  + name  + '\n' +
-        'Email: ' + email + '\n' +
-        'Level: ' + (level || 'Not specified') + '\n\n' +
-        'Submitted from thefitterfathers.com'
-      );
-      var addr = ['info', 'thefitterfathers.com'].join('@');
-      window.open('mailto:' + addr + '?subject=' + s + '&body=' + b, '_blank');
-    }
-
-    function showSuccess() {
-      document.getElementById('modalForm').style.display    = 'none';
-      document.getElementById('modalSuccess').style.display = 'block';
-    }
-  </script>
+// FOOTER
+const F = COPY.footer;
+document.getElementById('foot').innerHTML =
+  `<div class="f-inner">
+     <div class="f-brand">
+       <a href="#" class="logo">${COPY.brand}</a>
+       <p>${F.tagline}</p>
+     </div>
+     <div class="f-col">
+       <h4>Coaching</h4>
+       ${F.coachingLinks.map(l=>`<a href="${l.href}"${extA(l.href)}>${l.label}</a>`).join('')}
+     </div>
+     <div class="f-col">
+       <h4>Connect</h4>
+       ${F.connectLinks.map(l=>`<a href="${l.href}"${extA(l.href)}>${l.label}</a>`).join('')}
+     </div>
+   </div>
+   <div class="f-bottom">
+     <span>${F.legal}</span>
+     <div class="f-legal">
+       ${F.legalLinks.map(l=>`<a href="${l.href}">${l.label}</a>`).join('')}
+     </div>
+   </div>`;
+</script>
 
 </body>
 </html>
